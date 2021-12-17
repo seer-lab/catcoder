@@ -125,25 +125,25 @@ public class SignDialogueController : MonoBehaviour
         Debug.Log("this button index was clicked:" + choice);
         //Debug.Log("Bowl type is: " + getBowlType.itemPlaced.name);
 
-        if(choice == 0 && bowlValue.value.name == "BucketBlue(Clone)")
+        if(choice == 0 && bowlValue.value.name == "BowlBool(Clone)")
         {
             fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced);
-            Debug.Log("Correctly chosen blue!");
+            Debug.Log("Correctly chosen bool!");
         }
-        else if (choice == 1 && bowlValue.value.name == "BucketGreen(Clone)")
+        else if (choice == 1 && bowlValue.value.name == "BowlChar(Clone)")
         {
             fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced);
-            Debug.Log("Correctly chosen green!");
+            Debug.Log("Correctly chosen char!");
         }
-        else if (choice == 2 && bowlValue.value.name == "BucketRed(Clone)")
+        else if (choice == 2 && bowlValue.value.name == "BowlFloat(Clone)")
         {
             fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced);
-            Debug.Log("Correctly chosen red!");
+            Debug.Log("Correctly chosen float!");
         }
-        else if (choice == 3 && bowlValue.value.name == "BucketYellow(Clone)")
+        else if (choice == 3 && bowlValue.value.name == "BowlInt(Clone)")
         {
             fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced);
-            Debug.Log("Correctly chosen yellow!");
+            Debug.Log("Correctly chosen int!");
         }
         else
         {
@@ -154,4 +154,7 @@ public class SignDialogueController : MonoBehaviour
 
         clickedIndex = choice;
     }
+
+
+
 }

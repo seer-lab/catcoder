@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3059780365809246879}
   - component: {fileID: 3059780365809246876}
   m_Layer: 3
-  m_Name: Bucket
+  m_Name: BowlBase
   m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 1093204495
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1019299670136064670, guid: ad1c9ab59b18c1749941ebf0de9dfd6b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2fdef2c18f4957540903909c755df7de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

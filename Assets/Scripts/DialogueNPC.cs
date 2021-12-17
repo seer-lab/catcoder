@@ -7,7 +7,7 @@ public class DialogueNPC : Interactable
 {
     [SerializeField] private TextAssetValue dialogueValue; //intermediate dialogue value
     [SerializeField] private TextAsset myDialogue; // npcs dialogue
-    [SerializeField] private Notification branchingDialogueNotification;
+    [SerializeField] private Notification scrollingDialogueNotification;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class DialogueNPC : Interactable
             if (Input.GetKey(KeyCode.R))
             {
                 dialogueValue.value = myDialogue;
-                branchingDialogueNotification.Raise();
+                scrollingDialogueNotification.Raise();
             }
         }
     }

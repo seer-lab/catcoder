@@ -9,19 +9,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7804802745295940416, guid: 4ea2c915839c7a148b0925a4860a09d5, type: 3}
       propertyPath: m_Name
-      value: Bucket
+      value: BucketBlue
       objectReference: {fileID: 0}
     - target: {fileID: 7804802745295940419, guid: 4ea2c915839c7a148b0925a4860a09d5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4531089da85d677408e6316d16ccd67f, type: 3}
+    - target: {fileID: 7804802745295940419, guid: 4ea2c915839c7a148b0925a4860a09d5, type: 3}
       propertyPath: m_Color.b
-      value: 0.8867924
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7804802745295940419, guid: 4ea2c915839c7a148b0925a4860a09d5, type: 3}
       propertyPath: m_Color.g
-      value: 0.33045566
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7804802745295940419, guid: 4ea2c915839c7a148b0925a4860a09d5, type: 3}
       propertyPath: m_Color.r
-      value: 0.38317993
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7804802745295940420, guid: 4ea2c915839c7a148b0925a4860a09d5, type: 3}
       propertyPath: m_RootOrder

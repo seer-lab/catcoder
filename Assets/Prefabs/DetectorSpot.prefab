@@ -154,5 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placeSpot: {fileID: 3065462144019963731}
+  itemPlaced: {fileID: 0}
   currentlyOccupied: 0
   newSprite: {fileID: 6698220844333345315, guid: ad1c9ab59b18c1749941ebf0de9dfd6b, type: 3}
+  newPrefab: {fileID: 1314625263703390840, guid: bc1a6067276340e4fb6e3f152a5b822d, type: 3}

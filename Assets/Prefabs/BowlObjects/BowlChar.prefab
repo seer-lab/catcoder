@@ -8,20 +8,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2191865468746338248, guid: 4da72a4a62161f3418b7030127509c3b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5d1ac964e5719ef4a8946a9a26399965, type: 3}
+    - target: {fileID: 2191865468746338248, guid: 4da72a4a62161f3418b7030127509c3b, type: 3}
       propertyPath: m_Color.b
-      value: 0.034754362
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2191865468746338248, guid: 4da72a4a62161f3418b7030127509c3b, type: 3}
       propertyPath: m_Color.g
-      value: 0.43642527
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2191865468746338248, guid: 4da72a4a62161f3418b7030127509c3b, type: 3}
       propertyPath: m_Color.r
-      value: 0.6698113
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2191865468746338251, guid: 4da72a4a62161f3418b7030127509c3b, type: 3}
       propertyPath: m_Name
-      value: Bucket
+      value: BucketGreen
       objectReference: {fileID: 0}
     - target: {fileID: 2191865468746338255, guid: 4da72a4a62161f3418b7030127509c3b, type: 3}
       propertyPath: m_RootOrder

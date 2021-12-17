@@ -1,9 +1,9 @@
-Hello World!
+Please enter the correct option for this bowl!
 
-* [Blue] I chose choice blue
-* [Green] I chose choice green
-* [Red] I chose choice red
-* [Yellow] I chose choice yellow
+* [Boolean] I chose choice bool!
+* [Character] I chose choice char!
+* [Decimal] I chose choice float!
+* [Integer] I chose choice int!
 
 //-
 //-> Divert1

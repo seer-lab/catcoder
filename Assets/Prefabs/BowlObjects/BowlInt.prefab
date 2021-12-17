@@ -9,11 +9,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2688432415333748944, guid: a5872a623998396498da5fb87a39eb4c, type: 3}
       propertyPath: m_Name
-      value: Bucket
+      value: BucketYellow
       objectReference: {fileID: 0}
     - target: {fileID: 2688432415333748947, guid: a5872a623998396498da5fb87a39eb4c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1276ff2105ba3694e9ebd7e1ab7984d8, type: 3}
+    - target: {fileID: 2688432415333748947, guid: a5872a623998396498da5fb87a39eb4c, type: 3}
       propertyPath: m_Color.b
-      value: 0.0141509175
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2688432415333748947, guid: a5872a623998396498da5fb87a39eb4c, type: 3}
       propertyPath: m_Color.g
@@ -21,7 +25,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2688432415333748947, guid: a5872a623998396498da5fb87a39eb4c, type: 3}
       propertyPath: m_Color.r
-      value: 0.41143623
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2688432415333748948, guid: a5872a623998396498da5fb87a39eb4c, type: 3}
       propertyPath: m_RootOrder

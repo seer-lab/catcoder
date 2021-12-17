@@ -9,7 +9,10 @@ public class ItemDetector : MonoBehaviour
     public bool currentlyOccupied;
     public Sprite newSprite;
     private string newTag = "TransformedObject";
+    public GameObject newPrefab;
     //private int wasClicked = 4;
+
+    [SerializeField] GameObject pourAnimationObject;
 
     //public BranchingDialogueController getIndexClicked;
 
@@ -95,11 +98,27 @@ public class ItemDetector : MonoBehaviour
     public void changeObject(GameObject bucket)
     {
         
-        Debug.Log(bucket.GetComponent<SpriteRenderer>().sprite);
-        bucket.GetComponent<SpriteRenderer>().sprite = newSprite;
+        //Debug.Log(bucket.GetComponent<SpriteRenderer>().sprite);
+        //bucket = newPrefab;
+
         Debug.Log("OKAY YOU GOT HERE");
         Debug.Log("bucket is: " + bucket.name);
         Debug.Log(bucket.GetComponent<SpriteRenderer>().sprite);
+
+        pourAnimationObject.SetActive(true);
+        StartCoroutine(PlayAnimationAndDelay(5, bucket));
+        
+    }
+
+    IEnumerator PlayAnimationAndDelay(int time, GameObject bowl)
+    {
+        yield return new WaitForSeconds(time);
+        pourAnimationObject.SetActive(false);
+
+        Destroy(bowl);
+        bowl = Instantiate(newPrefab);
+        bowl.transform.position = placeSpot.position;
+        bowl.transform.parent = transform;
     }
 
 
