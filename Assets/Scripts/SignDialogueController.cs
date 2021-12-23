@@ -12,7 +12,7 @@ public class SignDialogueController : MonoBehaviour
     [SerializeField] private Story myStory;
     [SerializeField] private GameObject choiceHolder;
 
-    public ItemDetector getBowlType; //ADDED
+    //public ItemDetector getBowlType; //ADDED //REMOVED, STATIC OF DETECTOR SPOT
     [SerializeField] private ObjectValue bowlValue;
     [SerializeField] private ItemDetectorValue fromObjectValue;
 
@@ -120,12 +120,15 @@ public class SignDialogueController : MonoBehaviour
     {
         //Debug.Log("THIS IS THE BEFORE THING: " + getBowlType.itemPlaced.name);
         //Debug.Log("THIS IS THE AFTER THING: " + bowlValue.value.name);
-        Debug.Log("THIS IS THE BEFORE THING: " + getBowlType);
-        Debug.Log("THIS IS THE AFTER THING: " + fromObjectValue.value);
+        //Debug.Log("THIS IS THE BEFORE THING: " + getBowlType.name);
+        Debug.Log("THIS IS THE AFTER THING: " + fromObjectValue.value.name);
         Debug.Log("this button index was clicked:" + choice);
+        //Debug.Log("this is the object bowlvalue: " + bowlValue.value.name);
+        Debug.Log("this is the object fromobject val placed name: " + fromObjectValue.value.itemPlaced.name);
+
         //Debug.Log("Bowl type is: " + getBowlType.itemPlaced.name);
 
-        if(choice == 0 && bowlValue.value.name == "BowlBool(Clone)")
+        if (choice == 0 && bowlValue.value.name == "BowlBool(Clone)")
         {
             fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced);
             Debug.Log("Correctly chosen bool!");

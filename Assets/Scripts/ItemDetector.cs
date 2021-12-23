@@ -33,14 +33,14 @@ public class ItemDetector : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D other)
     {
         //Set what the itemplaced is
-        itemPlaced = other.gameObject;
+        
         //When an object of tag Object enters, this happens
         ////Generally Dynamic buckets trigger when places, and static trigger when removed..
 
         //If the object is detected to be placed
-        if (other.gameObject.tag == "Object" && !other.isTrigger)
+        if (other.gameObject.tag == "Bowl" && !other.isTrigger)
         {
-            
+            itemPlaced = other.gameObject;
             Debug.Log("Object entered");
             //Transform the position of the placed object to the spot and set as child
             if (!currentlyOccupied)
@@ -68,11 +68,11 @@ public class ItemDetector : MonoBehaviour
 
     public void OnTriggerExit2D(Collider2D other)
     {
-        itemPlaced = null; //Unset it
+        //itemPlaced = null; //Unset it
 
-        if (other.gameObject.tag == "Object" && !other.isTrigger)
+        if (other.gameObject.tag == "Bowl" && !other.isTrigger)
         {
-            
+            itemPlaced = null; //Unset it if tag is
             Debug.Log("Object exited");
             currentlyOccupied = false;
             Debug.Log("now not occupied");
@@ -95,18 +95,18 @@ public class ItemDetector : MonoBehaviour
 
     // Update is called once per frame
 
-    public void changeObject(GameObject bucket)
+    public void changeObject(GameObject bowl)
     {
         
         //Debug.Log(bucket.GetComponent<SpriteRenderer>().sprite);
         //bucket = newPrefab;
 
         Debug.Log("OKAY YOU GOT HERE");
-        Debug.Log("bucket is: " + bucket.name);
-        Debug.Log(bucket.GetComponent<SpriteRenderer>().sprite);
+        Debug.Log("bucket is: " + bowl.name);
+        Debug.Log(bowl.GetComponent<SpriteRenderer>().sprite);
 
         pourAnimationObject.SetActive(true);
-        StartCoroutine(PlayAnimationAndDelay(5, bucket));
+        StartCoroutine(PlayAnimationAndDelay(5, bowl));
         
     }
 

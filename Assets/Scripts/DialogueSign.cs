@@ -27,8 +27,11 @@ public class DialogueSign : Interactable
         {
             if (Input.GetKey(KeyCode.R))
             {
+                Debug.Log("from object val: " + fromObject.value);
+                Debug.Log("my from object: " + myFromObject);
                 bowlType.value = myBowlType.itemPlaced; //ADDED
                 fromObject.value = myFromObject;
+                Debug.Log("from object after redef: " + fromObject.value);
                 dialogueValue.value = myDialogue;
                 branchingDialogueNotification.Raise();
             }

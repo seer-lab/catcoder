@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2688432415333748944, guid: a5872a623998396498da5fb87a39eb4c, type: 3}
       propertyPath: m_Name
-      value: BucketYellow
+      value: BowlInt
       objectReference: {fileID: 0}
     - target: {fileID: 2688432415333748947, guid: a5872a623998396498da5fb87a39eb4c, type: 3}
       propertyPath: m_Sprite

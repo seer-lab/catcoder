@@ -7,16 +7,22 @@ public class PickUp : MonoBehaviour
     public Transform holdSpot;
     public LayerMask pickUpMask;
     public LayerMask wallCollisionMask;
+    public LayerMask objectCollisionMask;
     public Vector3 Direction { get; set; }
-    private GameObject itemHolding;
+    public GameObject itemHolding;
+    private LayerMask allCollisions;
 
-    
+
+    private void Start()
+    {
+        allCollisions = pickUpMask | wallCollisionMask | objectCollisionMask;
+    }
     // Update is called once per frame
     void Update()
     {
 
         Ray2D ray = new Ray2D(transform.position, Direction);
-        RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, 1f, wallCollisionMask); 
+        RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, 1f, allCollisions); 
 
         if(hit.collider != null)
         {
@@ -29,16 +35,19 @@ public class PickUp : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             //If there is currently an item being held; drop procedure
-            if (itemHolding && hit.collider == null)
+            if (itemHolding)
             {
-
-                itemHolding.transform.position = transform.position + Direction;
-                itemHolding.transform.parent = null;
-                if(itemHolding.GetComponent<Rigidbody2D>())
+                if(hit.collider == null)
                 {
-                    itemHolding.GetComponent<Rigidbody2D>().simulated = true;
+                    itemHolding.transform.position = transform.position + Direction;
+                    itemHolding.transform.parent = null;
+                    if (itemHolding.GetComponent<Rigidbody2D>())
+                    {
+                        itemHolding.GetComponent<Rigidbody2D>().simulated = true;
+                    }
+                    itemHolding = null;
                 }
-                itemHolding = null;
+
             }
             //Else pickup procedure
             else

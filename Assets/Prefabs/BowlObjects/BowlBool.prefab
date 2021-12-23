@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7804802745295940416, guid: 4ea2c915839c7a148b0925a4860a09d5, type: 3}
       propertyPath: m_Name
-      value: BucketBlue
+      value: BowlBool
       objectReference: {fileID: 0}
     - target: {fileID: 7804802745295940419, guid: 4ea2c915839c7a148b0925a4860a09d5, type: 3}
       propertyPath: m_Sprite

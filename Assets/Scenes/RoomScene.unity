@@ -1388,7 +1388,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1918,7 +1918,6 @@ MonoBehaviour:
   branchingCanvas: {fileID: 45255998}
   dialogueValue: {fileID: 11400000, guid: 326710290dbbf03499dd0a8d21963ad8, type: 2}
   choiceHolder: {fileID: 1200554968}
-  getBowlType: {fileID: 289983967}
   bowlValue: {fileID: 11400000, guid: eef4cb211bdd94d4c995c17e36dcc772, type: 2}
   fromObjectValue: {fileID: 11400000, guid: 2d812177fe629fa44a29501a795b88d7, type: 2}
   buttonList:
@@ -2833,6 +2832,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4711192848070926991, guid: 47598f8c91359a449ace3afc198b15d3, type: 3}
+      propertyPath: objectCollisionMask.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 7909830673510691666, guid: 47598f8c91359a449ace3afc198b15d3, type: 3}
       propertyPath: m_RootOrder
       value: 10

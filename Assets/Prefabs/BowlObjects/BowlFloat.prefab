@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3059780365809246877, guid: ed497629d761ef343bd693967e72332c, type: 3}
       propertyPath: m_Name
-      value: BucketRed
+      value: BowlFloat
       objectReference: {fileID: 0}
     - target: {fileID: 3059780365809246878, guid: ed497629d761ef343bd693967e72332c, type: 3}
       propertyPath: m_Sprite

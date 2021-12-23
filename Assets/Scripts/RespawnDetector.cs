@@ -29,7 +29,7 @@ public class RespawnDetector : MonoBehaviour
 
     public void OnTriggerExit2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Object" && !other.isTrigger)
+        if(other.gameObject.tag == "Bowl" && !other.isTrigger)
         {
             currentlyOccupied = false;
             //Check to see if spot is currently occupied
