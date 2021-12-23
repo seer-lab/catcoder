@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class RespawnDetector : MonoBehaviour
 {
@@ -8,17 +9,25 @@ public class RespawnDetector : MonoBehaviour
     public Transform respawnSpot;
     private bool currentlyOccupied;
 
-    public List<GameObject> prefabList = new List<GameObject>();
+    public List<GameObject> prefabList = new List<GameObject>(); //Select from a list of prefabs
+
+    //TO-TRY --> Make 4 list of words to assign to 4 arrays
+    private static string[] boolArray = { "True", "False"};
+    private static string[] stringArray = { "Scruffy", "Catnip", "Bucket", "Luigi", "Zelda" };
+    private static string[] floatArray = { "3.1415", "0.01", "0.99" };
+    private static string[] intArray = { "32", "11", "0", "255", "25" };
+
+
+    private string[][] selectionArray = new string[4][] { boolArray, stringArray, floatArray, intArray };
+
+    //public GameObject objectToLabel; //DELETE?
+
 
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("Placing bucket on start");
-        int prefabIndex = Random.Range(0, prefabList.Count - 1);
-        GameObject bucket = Instantiate(prefabList[prefabIndex]);
-        bucket.transform.position = respawnSpot.position;
-        bucket.transform.parent = transform;
-        currentlyOccupied = true;
+        Spawn();
     }
 
     // Update is called once per frame
@@ -45,12 +54,22 @@ public class RespawnDetector : MonoBehaviour
     IEnumerator Respawn(Collider2D other, int time)
     {   
         yield return new WaitForSeconds(time);
-        int prefabIndex = Random.Range(0, prefabList.Count);
+        Spawn();
+        Debug.Log("Respawning!");
+    }
+
+    public void Spawn()
+    {
+        int prefabIndex = Random.Range(0, prefabList.Count); //min inclusive, max exclusive
         GameObject bucket = Instantiate(prefabList[prefabIndex]);
         bucket.transform.position = respawnSpot.position;
-        bucket.transform.parent = transform; //Just added, see if its fine
+        bucket.transform.parent = transform;
+
+        int first = prefabIndex;
+        int second = Random.Range(0, selectionArray[prefabIndex].Length);
+        Debug.Log("first: " + first + ", second: " + second);
+        bucket.GetComponentInChildren<TextMeshPro>().text = selectionArray[first][second];
         currentlyOccupied = true;
-        Debug.Log("Respawning!");
     }
 
 }

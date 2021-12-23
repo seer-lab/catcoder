@@ -8,7 +8,7 @@ public class ItemDetector : MonoBehaviour
     public GameObject itemPlaced;
     public bool currentlyOccupied;
     public Sprite newSprite;
-    private string newTag = "TransformedObject";
+    private string newTag = "PlacedBowl";
     public GameObject newPrefab;
     //private int wasClicked = 4;
 
@@ -20,6 +20,7 @@ public class ItemDetector : MonoBehaviour
     {
         //getIndexClicked = buttonPressed.GetComponent<BranchingDialogueController>();
         //Debug.Log(getIndexClicked.clickedIndex);
+        currentlyOccupied = false;
         
     }
 
@@ -40,11 +41,12 @@ public class ItemDetector : MonoBehaviour
         //If the object is detected to be placed
         if (other.gameObject.tag == "Bowl" && !other.isTrigger)
         {
-            itemPlaced = other.gameObject;
+            //itemPlaced = other.gameObject;
             Debug.Log("Object entered");
             //Transform the position of the placed object to the spot and set as child
             if (!currentlyOccupied)
             {
+                itemPlaced = other.gameObject;
                 Debug.Log("now occupied");
                 other.transform.position = placeSpot.position;
                 other.transform.parent = transform;
@@ -56,6 +58,7 @@ public class ItemDetector : MonoBehaviour
                 Debug.Log(other.gameObject.tag);
                 other.gameObject.tag = newTag;
                 Debug.Log(other.gameObject.tag);
+                other.gameObject.layer = 7;
             }
             else
             {
@@ -70,12 +73,16 @@ public class ItemDetector : MonoBehaviour
     {
         //itemPlaced = null; //Unset it
 
-        if (other.gameObject.tag == "Bowl" && !other.isTrigger)
+        if (other.gameObject.tag == "PlacedBowl" && !other.isTrigger)
         {
-            itemPlaced = null; //Unset it if tag is
-            Debug.Log("Object exited");
-            currentlyOccupied = false;
-            Debug.Log("now not occupied");
+            if (currentlyOccupied)
+            {
+                itemPlaced = null; //Unset it if tag is
+                Debug.Log("Object exited");
+                currentlyOccupied = false;
+                Debug.Log("now not occupied");
+            }
+
 
         }
 

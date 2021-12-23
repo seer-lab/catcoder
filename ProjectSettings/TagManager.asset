@@ -5,10 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Object
-  - TransformedObject
   - TransformedObjectIncorrect
   - TransformedObjectCorrect
   - Bowl
+  - PlacedBowl
   layers:
   - Default
   - TransparentFX

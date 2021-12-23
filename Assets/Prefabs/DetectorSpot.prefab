@@ -139,7 +139,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9, y: 0.9}
   m_EdgeRadius: 0
 --- !u!114 &4496112603886286947
 MonoBehaviour:
@@ -158,3 +158,4 @@ MonoBehaviour:
   currentlyOccupied: 0
   newSprite: {fileID: 6698220844333345315, guid: ad1c9ab59b18c1749941ebf0de9dfd6b, type: 3}
   newPrefab: {fileID: 1314625263703390840, guid: bc1a6067276340e4fb6e3f152a5b822d, type: 3}
+  pourAnimationObject: {fileID: 0}

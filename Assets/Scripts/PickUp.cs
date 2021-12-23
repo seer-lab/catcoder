@@ -9,7 +9,7 @@ public class PickUp : MonoBehaviour
     public LayerMask wallCollisionMask;
     public LayerMask objectCollisionMask;
     public Vector3 Direction { get; set; }
-    public GameObject itemHolding;
+    private GameObject itemHolding;
     private LayerMask allCollisions;
 
 
@@ -26,8 +26,8 @@ public class PickUp : MonoBehaviour
 
         if(hit.collider != null)
         {
-            Debug.Log("hit something!");
-            Debug.Log(hit.collider.name);
+            //Debug.Log("hit something!");
+            //Debug.Log(hit.collider.name);
             Debug.DrawLine(ray.origin, hit.point);
         }
 
