@@ -130,22 +130,22 @@ public class SignDialogueController : MonoBehaviour
 
         if (choice == 0 && bowlValue.value.name == "BowlBool(Clone)")
         {
-            fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced);
+            fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced, choice);
             Debug.Log("Correctly chosen bool!");
         }
         else if (choice == 1 && bowlValue.value.name == "BowlChar(Clone)")
         {
-            fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced);
+            fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced, choice);
             Debug.Log("Correctly chosen char!");
         }
         else if (choice == 2 && bowlValue.value.name == "BowlFloat(Clone)")
         {
-            fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced);
+            fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced, choice);
             Debug.Log("Correctly chosen float!");
         }
         else if (choice == 3 && bowlValue.value.name == "BowlInt(Clone)")
         {
-            fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced);
+            fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced, choice);
             Debug.Log("Correctly chosen int!");
         }
         else

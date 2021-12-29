@@ -9,10 +9,10 @@ public class ItemDetector : MonoBehaviour
     public bool currentlyOccupied;
     public Sprite newSprite;
     private string newTag = "PlacedBowl";
-    public GameObject newPrefab;
+    public GameObject[] newPrefab;
     //private int wasClicked = 4;
 
-    [SerializeField] GameObject pourAnimationObject;
+    [SerializeField] GameObject[] pourAnimationObject;
 
     //public BranchingDialogueController getIndexClicked;
 
@@ -102,25 +102,41 @@ public class ItemDetector : MonoBehaviour
 
     // Update is called once per frame
 
-    public void changeObject(GameObject bowl)
+    public void changeObject(GameObject bowl, int choice)
     {
         
         Debug.Log("bowl is: " + bowl.name);
         Debug.Log("bowl is: " + bowl.tag);
         Debug.Log("bowl is: " + bowl.layer);
 
-        pourAnimationObject.SetActive(true);
-        StartCoroutine(PlayAnimationAndDelay(5, bowl));
-        
+        //pourAnimationObject.SetActive(true);
+        //StartCoroutine(PlayAnimationAndDelay(5, bowl));
+
+        if (choice == 0)
+        {
+            pourAnimationObject[0].SetActive(true);
+            StartCoroutine(PlayAnimationAndDelay(5, bowl, 0));
+        }
+        if(choice == 1)
+        {
+            pourAnimationObject[1].SetActive(true);
+            StartCoroutine(PlayAnimationAndDelay(5, bowl, 1));
+        }
+        if(choice == 2 | choice == 3)
+        {
+            pourAnimationObject[2].SetActive(true);
+            StartCoroutine(PlayAnimationAndDelay(5, bowl, 2));
+        }
+
     }
 
-    IEnumerator PlayAnimationAndDelay(int time, GameObject bowl)
+    IEnumerator PlayAnimationAndDelay(int time, GameObject bowl, int choice)
     {
         yield return new WaitForSeconds(time);
-        pourAnimationObject.SetActive(false);
+        pourAnimationObject[choice].SetActive(false);
 
         Destroy(bowl);
-        bowl = Instantiate(newPrefab);
+        bowl = Instantiate(newPrefab[choice]);
         bowl.transform.position = placeSpot.position;
         bowl.transform.parent = transform;
 
