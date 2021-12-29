@@ -105,12 +105,9 @@ public class ItemDetector : MonoBehaviour
     public void changeObject(GameObject bowl)
     {
         
-        //Debug.Log(bucket.GetComponent<SpriteRenderer>().sprite);
-        //bucket = newPrefab;
-
-        Debug.Log("OKAY YOU GOT HERE");
-        Debug.Log("bucket is: " + bowl.name);
-        Debug.Log(bowl.GetComponent<SpriteRenderer>().sprite);
+        Debug.Log("bowl is: " + bowl.name);
+        Debug.Log("bowl is: " + bowl.tag);
+        Debug.Log("bowl is: " + bowl.layer);
 
         pourAnimationObject.SetActive(true);
         StartCoroutine(PlayAnimationAndDelay(5, bowl));
@@ -126,6 +123,10 @@ public class ItemDetector : MonoBehaviour
         bowl = Instantiate(newPrefab);
         bowl.transform.position = placeSpot.position;
         bowl.transform.parent = transform;
+
+        Debug.Log("bowl2 is: " + bowl.name);
+        Debug.Log("bowl2 is: " + bowl.tag);
+        Debug.Log("bowl2 is: " + bowl.layer);
     }
 
 
