@@ -1,7 +1,7 @@
 Please enter the correct option for this bowl!
 
 * [Boolean] I chose choice bool!
-* [String] I chose choice char!
+* [String] I chose choice string!
 * [Decimal] I chose choice float!
 * [Integer] I chose choice int!
 

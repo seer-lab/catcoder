@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.UI;
+using TMPro;
 
 public class SignDialogueController : MonoBehaviour
 {
@@ -88,7 +89,11 @@ public class SignDialogueController : MonoBehaviour
 
 
         DialogueObject newDialogueObject = printedDialogue.GetComponent<DialogueObject>();
-        newDialogueObject.Setup(newDialogue);
+        //dialogueText.GetComponent<TextMeshPro>().text = fromObjectValue.value.GetComponentInChildren<TextMeshPro>().text;
+
+        //newDialogueObject.Setup(newDialogue);
+        newDialogueObject.Setup("test");
+        //dialogueText.GetComponent<TextMeshPro>().text = fromObjectValue.value.GetComponentInChildren<TextMeshPro>().text;
         //printedDialogue.gameSetup(newDialogue);
         //printedDialogue.GetComponent<TMPro.TextMeshProUGUI>().text = newDialogue;
         //newDialogueObject.Setup(newDialogue);
@@ -118,6 +123,14 @@ public class SignDialogueController : MonoBehaviour
 
     public void WasClicked(int choice)
     {
+        if(fromObjectValue.value.itemPlaced == null)
+        {
+            Debug.Log("NO BOWL!");
+            //UI POPUP?
+            return;
+        }
+        Debug.Log("name on the bowl: " + fromObjectValue.value.GetComponentInChildren<TextMeshPro>().text);
+        //dialogueText.GetComponent<TextMeshPro>().text = fromObjectValue.value.GetComponentInChildren<TextMeshPro>().text;
         //Debug.Log("THIS IS THE BEFORE THING: " + getBowlType.itemPlaced.name);
         //Debug.Log("THIS IS THE AFTER THING: " + bowlValue.value.name);
         //Debug.Log("THIS IS THE BEFORE THING: " + getBowlType.name);
@@ -130,28 +143,28 @@ public class SignDialogueController : MonoBehaviour
 
         if (choice == 0 && bowlValue.value.name == "BowlBool(Clone)")
         {
-            fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced, choice);
+            fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced, choice, true);
             Debug.Log("Correctly chosen bool!");
         }
         else if (choice == 1 && bowlValue.value.name == "BowlChar(Clone)")
         {
-            fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced, choice);
+            fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced, choice, true);
             Debug.Log("Correctly chosen char!");
         }
         else if (choice == 2 && bowlValue.value.name == "BowlFloat(Clone)")
         {
-            fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced, choice);
+            fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced, choice, true);
             Debug.Log("Correctly chosen float!");
         }
         else if (choice == 3 && bowlValue.value.name == "BowlInt(Clone)")
         {
-            fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced, choice);
+            fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced, choice, true);
             Debug.Log("Correctly chosen int!");
         }
         else
         {
+            fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced, choice, false);
             Debug.Log("Incorrect! Item is: " + bowlValue.value.name);
-            //getBowlType.changeObject(getBowlType.itemPlaced);
         }
 
 

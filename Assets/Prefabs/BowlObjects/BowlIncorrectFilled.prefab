@@ -1,5 +1,74 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2627330907087775473
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7465234485897124147}
+    m_Modifications:
+    - target: {fileID: 9079559137516837144, guid: e8c43a99a7a693544bbb40c9343b9370, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9079559137516837144, guid: e8c43a99a7a693544bbb40c9343b9370, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9079559137516837144, guid: e8c43a99a7a693544bbb40c9343b9370, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9079559137516837144, guid: e8c43a99a7a693544bbb40c9343b9370, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.022
+      objectReference: {fileID: 0}
+    - target: {fileID: 9079559137516837144, guid: e8c43a99a7a693544bbb40c9343b9370, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.633
+      objectReference: {fileID: 0}
+    - target: {fileID: 9079559137516837144, guid: e8c43a99a7a693544bbb40c9343b9370, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9079559137516837144, guid: e8c43a99a7a693544bbb40c9343b9370, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9079559137516837144, guid: e8c43a99a7a693544bbb40c9343b9370, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9079559137516837144, guid: e8c43a99a7a693544bbb40c9343b9370, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9079559137516837144, guid: e8c43a99a7a693544bbb40c9343b9370, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9079559137516837144, guid: e8c43a99a7a693544bbb40c9343b9370, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9079559137516837144, guid: e8c43a99a7a693544bbb40c9343b9370, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9079559137516837144, guid: e8c43a99a7a693544bbb40c9343b9370, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9079559137516837149, guid: e8c43a99a7a693544bbb40c9343b9370, type: 3}
+      propertyPath: m_Name
+      value: AnimationIncorrect
+      objectReference: {fileID: 0}
+    - target: {fileID: 9079559137516837149, guid: e8c43a99a7a693544bbb40c9343b9370, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e8c43a99a7a693544bbb40c9343b9370, type: 3}
 --- !u!1001 &7189321727742254489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51,6 +120,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 314210956235752620, guid: 72228ea7770f98d4d905ca58d6f04aaa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 314210956235752620, guid: 72228ea7770f98d4d905ca58d6f04aaa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 314210956235752621, guid: 72228ea7770f98d4d905ca58d6f04aaa, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -59,5 +136,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BowlIncorrectFilled
       objectReference: {fileID: 0}
+    - target: {fileID: 314210956235752622, guid: 72228ea7770f98d4d905ca58d6f04aaa, type: 3}
+      propertyPath: m_TagString
+      value: TransformedObjectIncorrect
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72228ea7770f98d4d905ca58d6f04aaa, type: 3}
+--- !u!4 &7465234485897124147 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 314210956235752618, guid: 72228ea7770f98d4d905ca58d6f04aaa, type: 3}
+  m_PrefabInstance: {fileID: 7189321727742254489}
+  m_PrefabAsset: {fileID: 0}

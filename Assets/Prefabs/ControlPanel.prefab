@@ -184,7 +184,7 @@ MonoBehaviour:
   otherTag: Player
   myNotification: {fileID: 11400000, guid: 8258f61000917f742a5a29aa1b5df9a3, type: 2}
   dialogueValue: {fileID: 11400000, guid: 326710290dbbf03499dd0a8d21963ad8, type: 2}
-  myDialogue: {fileID: 4900000, guid: dd973d2350c4d674eb44897f71d62106, type: 3}
+  myDialogue: {fileID: 4900000, guid: cd4c38e04cd8d2442b157c7efbef9ede, type: 3}
   branchingDialogueNotification: {fileID: 11400000, guid: 0146285b96ad2e444bec245151d5c593, type: 2}
   myBowlType: {fileID: 0}
   bowlType: {fileID: 11400000, guid: eef4cb211bdd94d4c995c17e36dcc772, type: 2}

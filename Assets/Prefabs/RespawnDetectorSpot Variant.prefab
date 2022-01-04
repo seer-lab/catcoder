@@ -77,9 +77,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bucketPrefab: {fileID: 0}
   respawnSpot: {fileID: 0}
+  bowlLabelName: {fileID: 11400000, guid: 4dffd297b5b18574880de8408b98652e, type: 2}
   prefabList:
   - {fileID: 2191865468746338251, guid: 4da72a4a62161f3418b7030127509c3b, type: 3}
   - {fileID: 2688432415333748944, guid: a5872a623998396498da5fb87a39eb4c, type: 3}
   - {fileID: 7804802745295940416, guid: 4ea2c915839c7a148b0925a4860a09d5, type: 3}
   - {fileID: 8198493483202564569, guid: fe17fee145448fd49a10524be21c2b8c, type: 3}
-  label: {fileID: 3059780365809246877, guid: ed497629d761ef343bd693967e72332c, type: 3}

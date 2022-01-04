@@ -102,7 +102,7 @@ public class ItemDetector : MonoBehaviour
 
     // Update is called once per frame
 
-    public void changeObject(GameObject bowl, int choice)
+    public void changeObject(GameObject bowl, int choice, bool correct)
     {
         
         Debug.Log("bowl is: " + bowl.name);
@@ -114,29 +114,53 @@ public class ItemDetector : MonoBehaviour
 
         if (choice == 0)
         {
-            pourAnimationObject[0].SetActive(true);
-            StartCoroutine(PlayAnimationAndDelay(5, bowl, 0));
+            if(correct == true)
+            {
+                pourAnimationObject[0].SetActive(true);
+                StartCoroutine(PlayAnimationAndDelay(5, bowl, 0, 0));
+            }
+            else
+            {
+                pourAnimationObject[0].SetActive(true);
+                StartCoroutine(PlayAnimationAndDelay(5, bowl, 0, 3));
+            }
         }
         if(choice == 1)
         {
-            pourAnimationObject[1].SetActive(true);
-            StartCoroutine(PlayAnimationAndDelay(5, bowl, 1));
+            if(correct == true)
+            {
+                pourAnimationObject[1].SetActive(true);
+                StartCoroutine(PlayAnimationAndDelay(5, bowl, 1, 1));
+            }
+            else
+            {
+                pourAnimationObject[1].SetActive(true);
+                StartCoroutine(PlayAnimationAndDelay(5, bowl, 1, 3));
+            }
         }
         if(choice == 2 | choice == 3)
         {
-            pourAnimationObject[2].SetActive(true);
-            StartCoroutine(PlayAnimationAndDelay(5, bowl, 2));
+            if(correct == true)
+            {
+                pourAnimationObject[2].SetActive(true);
+                StartCoroutine(PlayAnimationAndDelay(5, bowl, 2, 2));
+            }
+            else
+            {
+                pourAnimationObject[2].SetActive(true);
+                StartCoroutine(PlayAnimationAndDelay(5, bowl, 2, 3));
+            }
         }
 
     }
 
-    IEnumerator PlayAnimationAndDelay(int time, GameObject bowl, int choice)
+    IEnumerator PlayAnimationAndDelay(int time, GameObject bowl, int animationChoice, int bowlChoice)
     {
         yield return new WaitForSeconds(time);
-        pourAnimationObject[choice].SetActive(false);
+        pourAnimationObject[animationChoice].SetActive(false);
 
         Destroy(bowl);
-        bowl = Instantiate(newPrefab[choice]);
+        bowl = Instantiate(newPrefab[bowlChoice]);
         bowl.transform.position = placeSpot.position;
         bowl.transform.parent = transform;
 
