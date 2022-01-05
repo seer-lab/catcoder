@@ -11,6 +11,9 @@ TextureImporter:
   - first:
       213: 6866464857702916786
     second: DialogueButton
+  - first:
+      213: -6768044818946543642
+    second: NotificationFrame
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -150,7 +153,7 @@ TextureImporter:
         width: 45
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 7, y: 5, z: 7, w: 5}
       outline: []
       physicsShape: []
@@ -158,6 +161,27 @@ TextureImporter:
       bones: []
       spriteID: 2b2e51278659a4f50800000000000000
       internalID: 6866464857702916786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NotificationFrame
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 136
+        width: 190
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 7, y: 7, z: 7, w: 7}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6efa4c688131312a0800000000000000
+      internalID: -6768044818946543642
       vertices: []
       indices: 
       edges: []

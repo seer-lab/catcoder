@@ -20,6 +20,8 @@ public class SignDialogueController : MonoBehaviour
     public List<ButtonObject> buttonList = new List<ButtonObject>();
     public DialogueObject printedDialogue;
 
+    [SerializeField] private GameObject popupPanel;
+
     public int clickedIndex;
     // Start is called before the first frame update
     void Start()
@@ -92,7 +94,9 @@ public class SignDialogueController : MonoBehaviour
         //dialogueText.GetComponent<TextMeshPro>().text = fromObjectValue.value.GetComponentInChildren<TextMeshPro>().text;
 
         //newDialogueObject.Setup(newDialogue);
-        newDialogueObject.Setup("test");
+
+        newDialogueObject.Setup(fromObjectValue.value.GetComponentInChildren<TextMeshPro>().text); //Dialogue box text goes here.
+
         //dialogueText.GetComponent<TextMeshPro>().text = fromObjectValue.value.GetComponentInChildren<TextMeshPro>().text;
         //printedDialogue.gameSetup(newDialogue);
         //printedDialogue.GetComponent<TMPro.TextMeshProUGUI>().text = newDialogue;
@@ -123,12 +127,12 @@ public class SignDialogueController : MonoBehaviour
 
     public void WasClicked(int choice)
     {
-        if(fromObjectValue.value.itemPlaced == null)
+/*        if(fromObjectValue.value.itemPlaced == null)
         {
             Debug.Log("NO BOWL!");
             //UI POPUP?
             return;
-        }
+        }*/
         Debug.Log("name on the bowl: " + fromObjectValue.value.GetComponentInChildren<TextMeshPro>().text);
         //dialogueText.GetComponent<TextMeshPro>().text = fromObjectValue.value.GetComponentInChildren<TextMeshPro>().text;
         //Debug.Log("THIS IS THE BEFORE THING: " + getBowlType.itemPlaced.name);
@@ -145,30 +149,45 @@ public class SignDialogueController : MonoBehaviour
         {
             fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced, choice, true);
             Debug.Log("Correctly chosen bool!");
+            CorrectlyChosenResponse("Correctly chosen boolean!");
         }
         else if (choice == 1 && bowlValue.value.name == "BowlChar(Clone)")
         {
             fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced, choice, true);
             Debug.Log("Correctly chosen char!");
+            CorrectlyChosenResponse("Correctly chosen string!");
         }
         else if (choice == 2 && bowlValue.value.name == "BowlFloat(Clone)")
         {
             fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced, choice, true);
             Debug.Log("Correctly chosen float!");
+            CorrectlyChosenResponse("Correctly chosen float!");
         }
         else if (choice == 3 && bowlValue.value.name == "BowlInt(Clone)")
         {
             fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced, choice, true);
             Debug.Log("Correctly chosen int!");
+            CorrectlyChosenResponse("Correctly chosen integer!");
         }
         else
         {
             fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced, choice, false);
             Debug.Log("Incorrect! Item is: " + bowlValue.value.name);
+            CorrectlyChosenResponse("Incorrect! Item is a " + bowlValue.value.name);
         }
 
 
         clickedIndex = choice;
+    }
+
+    public void CorrectlyChosenResponse(string response)
+    {
+        popupPanel.GetComponentInChildren<TextMeshProUGUI>().text = response;
+
+        PopupPanelController.OpenPopup(popupPanel);
+        popupPanel.SetActive(true);
+        StartCoroutine(PopupPanelController.PopupAndDelay(5, popupPanel));
+
     }
 
 
