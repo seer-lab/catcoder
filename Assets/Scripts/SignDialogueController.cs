@@ -20,7 +20,14 @@ public class SignDialogueController : MonoBehaviour
     public List<ButtonObject> buttonList = new List<ButtonObject>();
     public DialogueObject printedDialogue;
 
+    private int currentScore;
+
     [SerializeField] private GameObject popupPanel;
+
+    [SerializeField] private GameObject progressPanel;
+    [SerializeField] private Image mask;
+
+    private bool thirdPhase = true; //TEMP FOR PROGRESS LATER
 
     public int clickedIndex;
     // Start is called before the first frame update
@@ -149,38 +156,38 @@ public class SignDialogueController : MonoBehaviour
         {
             fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced, choice, true);
             Debug.Log("Correctly chosen bool!");
-            CorrectlyChosenResponse("Correctly chosen boolean!");
+            CorrectlyChosenResponse("Correctly chosen boolean!", true);
         }
         else if (choice == 1 && bowlValue.value.name == "BowlChar(Clone)")
         {
             fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced, choice, true);
             Debug.Log("Correctly chosen char!");
-            CorrectlyChosenResponse("Correctly chosen string!");
+            CorrectlyChosenResponse("Correctly chosen string!", true);
         }
         else if (choice == 2 && bowlValue.value.name == "BowlFloat(Clone)")
         {
             fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced, choice, true);
             Debug.Log("Correctly chosen float!");
-            CorrectlyChosenResponse("Correctly chosen float!");
+            CorrectlyChosenResponse("Correctly chosen float!", true);
         }
         else if (choice == 3 && bowlValue.value.name == "BowlInt(Clone)")
         {
             fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced, choice, true);
             Debug.Log("Correctly chosen int!");
-            CorrectlyChosenResponse("Correctly chosen integer!");
+            CorrectlyChosenResponse("Correctly chosen integer!", true);
         }
         else
         {
             fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced, choice, false);
             Debug.Log("Incorrect! Item is: " + bowlValue.value.name);
-            CorrectlyChosenResponse("Incorrect! Item is a " + bowlValue.value.name);
+            CorrectlyChosenResponse("Incorrect! Item is a " + bowlValue.value.name, false);
         }
 
 
         clickedIndex = choice;
     }
 
-    public void CorrectlyChosenResponse(string response)
+    public void CorrectlyChosenResponse(string response, bool correctness)
     {
         popupPanel.GetComponentInChildren<TextMeshProUGUI>().text = response;
 
@@ -188,6 +195,26 @@ public class SignDialogueController : MonoBehaviour
         popupPanel.SetActive(true);
         StartCoroutine(PopupPanelController.PopupAndDelay(5, popupPanel));
 
+        if (thirdPhase)
+        {
+            if (correctness)
+            {
+                currentScore += 2;
+                ProgressBar.GetCurrentFill(mask, progressPanel, 0, 20, currentScore);
+            }
+            if (!correctness)
+            {
+                if (currentScore == 0)
+                {
+                    ProgressBar.GetCurrentFill(mask, progressPanel, 0, 20, currentScore);
+                }
+                else
+                {
+                    currentScore -= 1;
+                    ProgressBar.GetCurrentFill(mask, progressPanel, 0, 20, currentScore);
+                }
+            }
+        }
     }
 
 

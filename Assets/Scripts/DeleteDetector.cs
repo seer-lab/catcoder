@@ -8,7 +8,7 @@ public class DeleteDetector : MonoBehaviour
     public Transform deleteSpot;
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "TransformedObject" && !other.isTrigger)
+        if((other.gameObject.tag == "TransformedObjectCorrect" | other.gameObject.tag == "TransformedObjectIncorrect") && !other.isTrigger)
         {
             Debug.Log("here");
             other.transform.position = deleteSpot.position;
