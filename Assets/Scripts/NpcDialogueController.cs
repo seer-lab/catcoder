@@ -17,10 +17,22 @@ public class NpcDialogueController : MonoBehaviour
 
     private bool isPlaying;
 
+    //NPC MOVEMENT
+/*    [SerializeField] GameObject npc;
+    [SerializeField] VectorValue startingPosition;
+    Vector3 targetPos;
+    Vector3 change;
+    bool canMove;*/
+
     // Start is called before the first frame update
     void Start()
     {
         isPlaying = false;
+/*        canMove = false;*/
+
+/*        targetPos.Set((float)-6.5, (float)2.9, 0);
+        change = Vector3.zero;
+        change.y = 1;*/
     }
 
     // Update is called once per frame
@@ -34,6 +46,20 @@ public class NpcDialogueController : MonoBehaviour
         {
             RefreshView();
         }
+/*        if (canMove)
+        {
+            //NPC movement after speech
+
+            Debug.Log("pos before: " + npc.transform.position);
+            npc.transform.position = Vector3.MoveTowards(npc.transform.position, targetPos, 4 * Time.fixedDeltaTime);
+            Debug.Log("pos after: " + npc.transform.position);
+            
+            if (npc.transform.position == targetPos)
+            {
+                Debug.Log("setting false");
+                canMove = false;
+            }
+        }*/
     }
 
     public void EnableCanvas()
@@ -67,9 +93,25 @@ public class NpcDialogueController : MonoBehaviour
         }
         else
         {
+/*            canMove = true;*/
             isPlaying = false;
             scrollingCanvas.SetActive(false);
             dialogueText.text = "";
+
+            /*            //NPC movement after speech
+                        targetPos.Set((float)-6.5, (float)2.9, 0);
+                        //npc.transform.position = startingPosition.initialValue;
+                        change = Vector3.zero;
+                        change.y = 1;
+
+                        *//*            npc.GetComponent<Rigidbody2D>().MovePosition(
+                                        transform.position + change * 4 * Time.fixedDeltaTime
+                                        );*//*
+                        Debug.Log("pos before: " + npc.transform.position);
+                        npc.transform.position = Vector3.MoveTowards(npc.transform.position, targetPos, 4 * Time.fixedDeltaTime);
+                        Debug.Log("pos after: " + npc.transform.position);*/
+            
+
 
         }
 

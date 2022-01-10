@@ -27,18 +27,41 @@ public class SignDialogueController : MonoBehaviour
     [SerializeField] private GameObject progressPanel;
     [SerializeField] private Image mask;
 
-    private bool thirdPhase = true; //TEMP FOR PROGRESS LATER
+
+    //Progression
+    private bool thirdPhase = true;
+    [SerializeField] BoolAssetValue[] stageValues;
+    [SerializeField] BoolAssetValue[] stageCompleted;
+    [SerializeField] BoolAssetValue[] spawnSpecial;
+    int progressionCounter;
 
     public int clickedIndex;
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("when is this called?");
+        stageCompleted[0].value = true;
+        stageValues[1].value = true;
+        Debug.Log("here its true:" + stageValues[1].value);
+
+        Debug.Log("stage0 is : " + stageValues[0].value);
+        Debug.Log("stage1 is : " + stageValues[1].value);
+        Debug.Log("stage2 is : " + stageValues[2].value);
+        Debug.Log("stage3 is : " + stageValues[3].value);
+        Debug.Log("stage4 is : " + stageValues[4].value);
+        Debug.Log("stage5 is : " + stageValues[5].value);
+        Debug.Log("stage6 is : " + stageValues[6].value);
+        Debug.Log("stage7 is : " + stageValues[7].value);
+        Debug.Log("stage8 is : " + stageValues[8].value);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (stageValues[5].value == true && stageCompleted[4].value == true)
+        {
+            progressPanel.SetActive(true);
+        }
     }
 
     public void EnableCanvas()
@@ -78,9 +101,6 @@ public class SignDialogueController : MonoBehaviour
 
     public void MakeNewResponse(string newDialogue, int choiceValue)
     {
-        //ButtonObject newButtonObject = Instantiate(choicePrefab, choiceHolder.transform).GetComponent<ButtonObject>();
-        //newButtonObject.Setup(newDialogue, choiceValue);
-
         buttonList[choiceValue].gameObject.SetActive(true);
         buttonList[choiceValue].Setup(newDialogue, choiceValue);
         Button responseButton = buttonList[choiceValue].gameObject.GetComponent<Button>();
@@ -92,37 +112,19 @@ public class SignDialogueController : MonoBehaviour
     }
     public void MakeNewDialogue(string newDialogue)
     {
-
-        //DialogueObject newDialogueObject = Instantiate(dialoguePrefab, dialogueHolder.transform).GetComponent <DialogueObject>();
-        //newDialogueObject.Setup(newDialogue);
-
-
         DialogueObject newDialogueObject = printedDialogue.GetComponent<DialogueObject>();
-        //dialogueText.GetComponent<TextMeshPro>().text = fromObjectValue.value.GetComponentInChildren<TextMeshPro>().text;
-
-        //newDialogueObject.Setup(newDialogue);
-
-        newDialogueObject.Setup(fromObjectValue.value.GetComponentInChildren<TextMeshPro>().text); //Dialogue box text goes here.
-
-        //dialogueText.GetComponent<TextMeshPro>().text = fromObjectValue.value.GetComponentInChildren<TextMeshPro>().text;
-        //printedDialogue.gameSetup(newDialogue);
-        //printedDialogue.GetComponent<TMPro.TextMeshProUGUI>().text = newDialogue;
-        //newDialogueObject.Setup(newDialogue);
+        newDialogueObject.Setup(fromObjectValue.value.GetComponentInChildren<TextMeshPro>().text);
     }
 
     public void MakeNewChoices()
     {
         for(int i=0; i < choiceHolder.transform.childCount; i++)
         {
-            //Debug.Log(i);
-            //Debug.Log(buttonList[i].gameObject);
-            //Destroy(choiceHolder.transform.GetChild(i).gameObject);
             buttonList[i].gameObject.SetActive(false);
         }
         for(int i=0;i<myStory.currentChoices.Count; i++)
         {
             MakeNewResponse(myStory.currentChoices[i].text, i);
-
         }
     }
 
@@ -134,12 +136,11 @@ public class SignDialogueController : MonoBehaviour
 
     public void WasClicked(int choice)
     {
-/*        if(fromObjectValue.value.itemPlaced == null)
-        {
-            Debug.Log("NO BOWL!");
-            //UI POPUP?
-            return;
-        }*/
+        //WORKS
+        //stageValues[0].value = false;
+        //stageValues[1].value = true;
+        //stageValues[4].value = false;
+
         Debug.Log("name on the bowl: " + fromObjectValue.value.GetComponentInChildren<TextMeshPro>().text);
         //dialogueText.GetComponent<TextMeshPro>().text = fromObjectValue.value.GetComponentInChildren<TextMeshPro>().text;
         //Debug.Log("THIS IS THE BEFORE THING: " + getBowlType.itemPlaced.name);
@@ -154,33 +155,55 @@ public class SignDialogueController : MonoBehaviour
 
         if (choice == 0 && bowlValue.value.name == "BowlBool(Clone)")
         {
+            ContinueProgression();
             fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced, choice, true);
             Debug.Log("Correctly chosen bool!");
             CorrectlyChosenResponse("Correctly chosen boolean!", true);
         }
         else if (choice == 1 && bowlValue.value.name == "BowlChar(Clone)")
         {
+            Debug.Log("stage1 is : " + stageValues[1].value);
+            Debug.Log("comp0 is : " + stageCompleted[0].value);
+
+            if (stageValues[1].value == true && stageCompleted[0].value == true)
+            {
+                Debug.Log("Stage 1 should be completed");
+                stageCompleted[1].value = true;
+                stageCompleted[0].value = false;
+
+            }
+
+            ContinueProgression();
             fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced, choice, true);
             Debug.Log("Correctly chosen char!");
             CorrectlyChosenResponse("Correctly chosen string!", true);
         }
         else if (choice == 2 && bowlValue.value.name == "BowlFloat(Clone)")
         {
+            ContinueProgression();
             fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced, choice, true);
             Debug.Log("Correctly chosen float!");
             CorrectlyChosenResponse("Correctly chosen float!", true);
         }
         else if (choice == 3 && bowlValue.value.name == "BowlInt(Clone)")
         {
+            ContinueProgression();
             fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced, choice, true);
             Debug.Log("Correctly chosen int!");
             CorrectlyChosenResponse("Correctly chosen integer!", true);
         }
         else
         {
+            if (stageValues[1].value == true && stageCompleted[0].value == true)
+            {
+                Debug.Log("Incorrect stage 1");
+                stageValues[3].value = true;
+                stageValues[1].value = false;
+            }
             fromObjectValue.value.changeObject(fromObjectValue.value.itemPlaced, choice, false);
             Debug.Log("Incorrect! Item is: " + bowlValue.value.name);
             CorrectlyChosenResponse("Incorrect! Item is a " + bowlValue.value.name, false);
+            
         }
 
 
@@ -195,8 +218,9 @@ public class SignDialogueController : MonoBehaviour
         popupPanel.SetActive(true);
         StartCoroutine(PopupPanelController.PopupAndDelay(5, popupPanel));
 
-        if (thirdPhase)
+        if (stageValues[5].value == true && stageCompleted[4].value == true)
         {
+            progressPanel.SetActive(true);
             if (correctness)
             {
                 currentScore += 2;
@@ -214,9 +238,31 @@ public class SignDialogueController : MonoBehaviour
                     ProgressBar.GetCurrentFill(mask, progressPanel, 0, 20, currentScore);
                 }
             }
+            if(currentScore >= 20)
+            {
+                stageCompleted[5].value = true;
+            }
         }
     }
 
+    void ContinueProgression()
+    {
+        Debug.Log("Stage 4 progression");
+        if (stageValues[4].value == true && stageCompleted[1].value == true)
+        {
+            progressionCounter++;
+            if (progressionCounter < 3)
+            {
+                spawnSpecial[1].value = true;
+            }
+            else
+            {
+                Debug.Log("Progression is not yet 3");
+                stageCompleted[1].value = false;
+                stageCompleted[4].value = true;
+            }
+        }
+    }
 
 
 }
