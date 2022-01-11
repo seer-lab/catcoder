@@ -36,12 +36,18 @@ public class RespawnDetector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (stageValues[1].value == true && stageCompleted[0].value == true)
         {
             if (spawnSpecial[0].value == true)
             {
-                SpawnSpecific("phase1");
-                spawnSpecial[0].value = false;
+                if (!currentlyOccupied)
+                {
+                    //Set time respawn to 5 seconds
+                    SpawnSpecific("phase1");
+                }
+                
+                //spawnSpecial[0].value = false;
                 //stageValues[1].value = false;
             }
         }
@@ -50,22 +56,27 @@ public class RespawnDetector : MonoBehaviour
         {
             if (spawnSpecial[1].value == true)
             {
-
-                Spawn();
-                spawnSpecial[1].value = false;
+                if (!currentlyOccupied)
+                {
+                    Debug.Log("phase 2 start");
+                    //Set time respawn to 5 seconds
+                    Spawn();
+                }
             }
         }
 
-        else if (stageValues[4].value == true && stageCompleted[4].value == true)
+        else if (stageValues[5].value == true && stageCompleted[4].value == true)
         {
-            if (!currentlyOccupied)
+            if(spawnSpecial[2].value == true)
             {
-                Debug.Log("repsawning?");
-                //Set time respawn to 5 seconds
-                Spawn();
+                if (!currentlyOccupied)
+                {
+                    Debug.Log("repsawning?");
+                    //Set time respawn to 5 seconds
+                    Spawn();
+                }
             }
         }
-
     }
 
     public void OnTriggerExit2D(Collider2D other)
@@ -79,6 +90,21 @@ public class RespawnDetector : MonoBehaviour
         Debug.Log("stage6 is : " + stageValues[6].value);
         Debug.Log("stage7 is : " + stageValues[7].value);
         Debug.Log("stage8 is : " + stageValues[8].value);
+
+        if (stageValues[1].value == true && stageCompleted[0].value == true)
+        {
+            if (other.gameObject.tag == "Bowl" && !other.isTrigger)
+            {
+                currentlyOccupied = false;
+            }
+        }
+        if (stageValues[4].value == true && stageCompleted[1].value == true)
+        {
+            if (other.gameObject.tag == "Bowl" && !other.isTrigger)
+            {
+                currentlyOccupied = false;
+            }
+        }
         if (stageValues[5].value == true && stageCompleted[4].value == true)
         {
             Debug.Log("stage5 is : " + stageValues[5].value);
@@ -122,15 +148,16 @@ public class RespawnDetector : MonoBehaviour
     {
         if (phase == "phase1")
         {
-            if (transform.name == "RespawnDetectorSpot2")
-            {
                 GameObject bucket = Instantiate(prefabList[1]);
                 bucket.transform.position = respawnSpot.position;
                 bucket.transform.parent = transform;
 
                 bucket.GetComponentInChildren<TextMeshPro>().text = "Scruffy";
                 currentlyOccupied = true;
-            }
+        }
+        if (phase == "phase2")
+        {
+            Spawn();
         }
     }
 }

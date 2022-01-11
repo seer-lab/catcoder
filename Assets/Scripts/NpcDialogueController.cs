@@ -15,7 +15,12 @@ public class NpcDialogueController : MonoBehaviour
 
     public DialogueObject printedDialogue;
 
+    [SerializeField] BoolAssetValue isSpeaking;
     private bool isPlaying;
+
+    [SerializeField] BoolAssetValue[] stageValues;
+    [SerializeField] BoolAssetValue[] stageCompleted;
+    [SerializeField] BoolAssetValue[] spawnSpecial;
 
     //NPC MOVEMENT
 /*    [SerializeField] GameObject npc;
@@ -96,7 +101,34 @@ public class NpcDialogueController : MonoBehaviour
 /*            canMove = true;*/
             isPlaying = false;
             scrollingCanvas.SetActive(false);
+            isSpeaking.value = false;
             dialogueText.text = "";
+
+            if (stageValues[1].value == true && stageCompleted[0].value == true)
+            {
+                if (spawnSpecial[0].value == true)
+                {
+                    spawnSpecial[0].value = false;
+                }
+            }
+
+            if (stageValues[4].value == true && stageCompleted[1].value == true)
+            {
+                if (spawnSpecial[1].value == true)
+                {
+
+                    spawnSpecial[1].value = false;
+                }
+            }
+
+            if (stageValues[5].value == true && stageCompleted[4].value == true)
+            {
+                if (spawnSpecial[2].value == true)
+                {
+
+                    spawnSpecial[2].value = false;
+                }
+            }
 
             /*            //NPC movement after speech
                         targetPos.Set((float)-6.5, (float)2.9, 0);
@@ -110,7 +142,7 @@ public class NpcDialogueController : MonoBehaviour
                         Debug.Log("pos before: " + npc.transform.position);
                         npc.transform.position = Vector3.MoveTowards(npc.transform.position, targetPos, 4 * Time.fixedDeltaTime);
                         Debug.Log("pos after: " + npc.transform.position);*/
-            
+
 
 
         }

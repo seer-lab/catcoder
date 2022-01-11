@@ -39,6 +39,15 @@ public class SignDialogueController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        foreach(BoolAssetValue stage in stageValues)
+        {
+            stage.value = false;
+        }
+        foreach (BoolAssetValue stage in stageCompleted)
+        {
+            stage.value = false;
+        }
+
         Debug.Log("when is this called?");
         stageCompleted[0].value = true;
         stageValues[1].value = true;
@@ -253,7 +262,7 @@ public class SignDialogueController : MonoBehaviour
             progressionCounter++;
             if (progressionCounter < 3)
             {
-                spawnSpecial[1].value = true;
+                //spawnSpecial[1].value = true;
             }
             else
             {

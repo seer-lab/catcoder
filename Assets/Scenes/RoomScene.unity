@@ -2513,6 +2513,7 @@ MonoBehaviour:
   spawnSpecial:
   - {fileID: 11400000, guid: ff0895926b62ef94a98fd2efa943f229, type: 2}
   - {fileID: 11400000, guid: 5d1c475d8f2d99c4e965ef4e84f28e50, type: 2}
+  - {fileID: 11400000, guid: d548f8dbae9f8d44b8973373dfc73ea4, type: 2}
   clickedIndex: 0
 --- !u!114 &1325282519
 MonoBehaviour:
@@ -6515,6 +6516,106 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2796889449355329083, guid: 6e0326f0858da1443965595d494dc116, type: 3}
+      propertyPath: isSpeaking
+      value: 
+      objectReference: {fileID: 11400000, guid: a71040a5973cfb147a51b43a0b418f11, type: 2}
+    - target: {fileID: 2796889449355329083, guid: 6e0326f0858da1443965595d494dc116, type: 3}
+      propertyPath: stageValues.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796889449355329083, guid: 6e0326f0858da1443965595d494dc116, type: 3}
+      propertyPath: spawnSpecial.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796889449355329083, guid: 6e0326f0858da1443965595d494dc116, type: 3}
+      propertyPath: stageCompleted.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796889449355329083, guid: 6e0326f0858da1443965595d494dc116, type: 3}
+      propertyPath: stageValues.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 561bf26efbd345844827f76fd728ccf6, type: 2}
+    - target: {fileID: 2796889449355329083, guid: 6e0326f0858da1443965595d494dc116, type: 3}
+      propertyPath: stageValues.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6aff430c6544a4e40a2a0a603aa1ca73, type: 2}
+    - target: {fileID: 2796889449355329083, guid: 6e0326f0858da1443965595d494dc116, type: 3}
+      propertyPath: stageValues.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3df3214e45d4c82449886de8af6142cb, type: 2}
+    - target: {fileID: 2796889449355329083, guid: 6e0326f0858da1443965595d494dc116, type: 3}
+      propertyPath: stageValues.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: c5356c4f4090e674cbdb2a7bb30adaaf, type: 2}
+    - target: {fileID: 2796889449355329083, guid: 6e0326f0858da1443965595d494dc116, type: 3}
+      propertyPath: stageValues.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: e6a371c06781b0d4fa4c9b8d5e1e4e9e, type: 2}
+    - target: {fileID: 2796889449355329083, guid: 6e0326f0858da1443965595d494dc116, type: 3}
+      propertyPath: stageValues.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 161c1c2c6c3d78444b180b63d402a4d8, type: 2}
+    - target: {fileID: 2796889449355329083, guid: 6e0326f0858da1443965595d494dc116, type: 3}
+      propertyPath: stageValues.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: caf104a750ad8204eb4a6b61c4ce6ad6, type: 2}
+    - target: {fileID: 2796889449355329083, guid: 6e0326f0858da1443965595d494dc116, type: 3}
+      propertyPath: stageValues.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 03a599a3951ce90458b5bc046baec023, type: 2}
+    - target: {fileID: 2796889449355329083, guid: 6e0326f0858da1443965595d494dc116, type: 3}
+      propertyPath: stageValues.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: 508f565d92cfd934ba077de32618f74a, type: 2}
+    - target: {fileID: 2796889449355329083, guid: 6e0326f0858da1443965595d494dc116, type: 3}
+      propertyPath: spawnSpecial.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: ff0895926b62ef94a98fd2efa943f229, type: 2}
+    - target: {fileID: 2796889449355329083, guid: 6e0326f0858da1443965595d494dc116, type: 3}
+      propertyPath: spawnSpecial.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5d1c475d8f2d99c4e965ef4e84f28e50, type: 2}
+    - target: {fileID: 2796889449355329083, guid: 6e0326f0858da1443965595d494dc116, type: 3}
+      propertyPath: spawnSpecial.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: d548f8dbae9f8d44b8973373dfc73ea4, type: 2}
+    - target: {fileID: 2796889449355329083, guid: 6e0326f0858da1443965595d494dc116, type: 3}
+      propertyPath: stageCompleted.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 64e58c0f37365994f9a93baad83eb4f2, type: 2}
+    - target: {fileID: 2796889449355329083, guid: 6e0326f0858da1443965595d494dc116, type: 3}
+      propertyPath: stageCompleted.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 06ff57249ed150544a659cff1cc7e8ff, type: 2}
+    - target: {fileID: 2796889449355329083, guid: 6e0326f0858da1443965595d494dc116, type: 3}
+      propertyPath: stageCompleted.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: a61fbd28c0fb72d458c92502013f6b32, type: 2}
+    - target: {fileID: 2796889449355329083, guid: 6e0326f0858da1443965595d494dc116, type: 3}
+      propertyPath: stageCompleted.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6b6223fc7616056489bb644094a28a40, type: 2}
+    - target: {fileID: 2796889449355329083, guid: 6e0326f0858da1443965595d494dc116, type: 3}
+      propertyPath: stageCompleted.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e7e53bc05c0e1c4db5bf63b2b93ed03, type: 2}
+    - target: {fileID: 2796889449355329083, guid: 6e0326f0858da1443965595d494dc116, type: 3}
+      propertyPath: stageCompleted.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: ae54ca807bb805745a0e08c38d1aa177, type: 2}
+    - target: {fileID: 2796889449355329083, guid: 6e0326f0858da1443965595d494dc116, type: 3}
+      propertyPath: stageCompleted.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: c3c2a0c444e72be49bf694ccf02f9ad2, type: 2}
+    - target: {fileID: 2796889449355329083, guid: 6e0326f0858da1443965595d494dc116, type: 3}
+      propertyPath: stageCompleted.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: b6bc6fd4a62820b40a0f209d4f8b42da, type: 2}
+    - target: {fileID: 2796889449355329083, guid: 6e0326f0858da1443965595d494dc116, type: 3}
+      propertyPath: stageCompleted.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: ad07ec138e43d8d419897d24ad93fd5b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e0326f0858da1443965595d494dc116, type: 3}
 --- !u!1001 &2804430176774515706
@@ -6586,6 +6687,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1333876153}
     - target: {fileID: 4450799569570967044, guid: a39eefcf768ec2641ae134c0a7336d58, type: 3}
+      propertyPath: isSpeaking
+      value: 
+      objectReference: {fileID: 11400000, guid: a71040a5973cfb147a51b43a0b418f11, type: 2}
+    - target: {fileID: 4450799569570967044, guid: a39eefcf768ec2641ae134c0a7336d58, type: 3}
       propertyPath: stageValue
       value: 
       objectReference: {fileID: 11400000, guid: 561bf26efbd345844827f76fd728ccf6, type: 2}
@@ -6619,7 +6724,7 @@ PrefabInstance:
       objectReference: {fileID: 1921413791}
     - target: {fileID: 4450799569570967044, guid: a39eefcf768ec2641ae134c0a7336d58, type: 3}
       propertyPath: spawnSpecial.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4450799569570967044, guid: a39eefcf768ec2641ae134c0a7336d58, type: 3}
       propertyPath: myDialogue.Array.data[5]
@@ -6717,6 +6822,10 @@ PrefabInstance:
       propertyPath: spawnSpecial.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: 5d1c475d8f2d99c4e965ef4e84f28e50, type: 2}
+    - target: {fileID: 4450799569570967044, guid: a39eefcf768ec2641ae134c0a7336d58, type: 3}
+      propertyPath: spawnSpecial.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: d548f8dbae9f8d44b8973373dfc73ea4, type: 2}
     - target: {fileID: 4450799569570967044, guid: a39eefcf768ec2641ae134c0a7336d58, type: 3}
       propertyPath: stageCompleted.Array.data[0]
       value: 

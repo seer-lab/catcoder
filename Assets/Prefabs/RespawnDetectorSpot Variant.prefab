@@ -105,3 +105,4 @@ MonoBehaviour:
   spawnSpecial:
   - {fileID: 11400000, guid: ff0895926b62ef94a98fd2efa943f229, type: 2}
   - {fileID: 11400000, guid: 5d1c475d8f2d99c4e965ef4e84f28e50, type: 2}
+  - {fileID: 11400000, guid: d548f8dbae9f8d44b8973373dfc73ea4, type: 2}
