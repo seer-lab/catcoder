@@ -4,6 +4,7 @@ using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Tilemaps;
 
 public class SignDialogueController : MonoBehaviour
 {
@@ -29,11 +30,14 @@ public class SignDialogueController : MonoBehaviour
 
 
     //Progression
-    private bool thirdPhase = true;
     [SerializeField] BoolAssetValue[] stageValues;
     [SerializeField] BoolAssetValue[] stageCompleted;
     [SerializeField] BoolAssetValue[] spawnSpecial;
     int progressionCounter;
+
+    [SerializeField] TileBase tile;
+    [SerializeField] Tilemap tilemap;
+    [SerializeField] Vector3Int cell;
 
     public int clickedIndex;
     // Start is called before the first frame update
@@ -48,9 +52,15 @@ public class SignDialogueController : MonoBehaviour
             stage.value = false;
         }
 
-        Debug.Log("when is this called?");
         stageCompleted[0].value = true;
         stageValues[1].value = true;
+
+        if (tilemap.HasTile(cell) == false && stageCompleted[0].value == true)
+        {
+            tilemap.SetTile(cell, tile);
+        }
+
+        
         Debug.Log("here its true:" + stageValues[1].value);
 
         Debug.Log("stage0 is : " + stageValues[0].value);
@@ -70,6 +80,11 @@ public class SignDialogueController : MonoBehaviour
         if (stageValues[5].value == true && stageCompleted[4].value == true)
         {
             progressPanel.SetActive(true);
+        }
+
+        if (tilemap.HasTile(cell) == true && stageCompleted[7].value == true)
+        {
+            tilemap.SetTile(cell, null);
         }
     }
 

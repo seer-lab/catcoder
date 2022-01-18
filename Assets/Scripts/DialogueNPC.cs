@@ -129,6 +129,7 @@ public class DialogueNPC : Interactable
                         UseDialogue(7); //Success option for stage 5
 
                         stageValues[5].value = false;
+                        stageCompleted[7].value = true;
                     }
                     else if (stageValues[5].value == true && stageCompleted[5].value == false)
                     {
