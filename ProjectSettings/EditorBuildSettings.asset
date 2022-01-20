@@ -9,9 +9,15 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/Scenes/WorldScene.unity
+    guid: f53e306b65fd77247a48cb766f57227a
+  - enabled: 1
     path: Assets/Scenes/RoomScene.unity
     guid: 61bc2adc53d1f054f9a9cf7ebc2416cf
   - enabled: 1
-    path: Assets/Scenes/WorldScene.unity
-    guid: f53e306b65fd77247a48cb766f57227a
+    path: Assets/Scenes/Room2Scene.unity
+    guid: bd88d05e6f12cc24d9f344954c4ccefd
+  - enabled: 1
+    path: Assets/Scenes/Room3Scene.unity
+    guid: b8a64a364be65f740975b9dd15ec5fb0
   m_configObjects: {}

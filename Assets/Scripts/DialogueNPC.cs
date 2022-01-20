@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Tilemaps;
 
 public class DialogueNPC : Interactable
 {
@@ -18,6 +19,9 @@ public class DialogueNPC : Interactable
 
     [SerializeField] BoolAssetValue isSpeaking;
 
+    [SerializeField] TileBase tile;
+    [SerializeField] Tilemap tilemap;
+    [SerializeField] Vector3Int cell;
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +64,13 @@ public class DialogueNPC : Interactable
                         UseDialogue(1); //First dialogue in room scene
                                         //stageValues[1].value = false;
                         spawnSpecial[0].value = true;
+
+
+
+                        if (tilemap.HasTile(cell) == false && stageCompleted[0].value == true)
+                        {
+                            tilemap.SetTile(cell, tile);
+                        }
                     }
                     else if (stageValues[1].value == true && stageCompleted[1].value == true)
                     {
@@ -69,8 +80,11 @@ public class DialogueNPC : Interactable
                         stageValues[4].value = true;
 
                         //ClEAR THE SCENE OF BOWLS
-                        GameObject existingFinishedBowls = GameObject.FindGameObjectWithTag("TransformedObjectCorrect");
-                        GameObject.Destroy(existingFinishedBowls);
+                        GameObject[] existingFinishedBowls = GameObject.FindGameObjectsWithTag("TransformedObjectCorrect");
+                        foreach(GameObject bowls in existingFinishedBowls)
+                        {
+                            GameObject.Destroy(bowls);
+                        }
 
                         GameObject[] existingUnfinishedBowls = GameObject.FindGameObjectsWithTag("Bowl");
                         foreach(GameObject bowls in existingUnfinishedBowls)

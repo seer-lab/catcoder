@@ -55,10 +55,10 @@ public class SignDialogueController : MonoBehaviour
         stageCompleted[0].value = true;
         stageValues[1].value = true;
 
-        if (tilemap.HasTile(cell) == false && stageCompleted[0].value == true)
-        {
-            tilemap.SetTile(cell, tile);
-        }
+        //if (tilemap.HasTile(cell) == false && stageCompleted[0].value == true)
+        //{
+        //    tilemap.SetTile(cell, tile);
+        //}
 
         
         Debug.Log("here its true:" + stageValues[1].value);
