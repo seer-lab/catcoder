@@ -9,6 +9,8 @@ TagManager:
   - TransformedObjectCorrect
   - Bowl
   - PlacedBowl
+  - CatPostMoving
+  - CatPostHeld
   layers:
   - Default
   - TransparentFX

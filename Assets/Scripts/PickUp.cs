@@ -52,13 +52,16 @@ public class PickUp : MonoBehaviour
             //Else pickup procedure
             else
             {
-
                 Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + Direction, .4f, pickUpMask);
                 if (pickUpItem)
                 {
                     itemHolding = pickUpItem.gameObject;
                     itemHolding.transform.position = holdSpot.position;
                     itemHolding.transform.parent = transform;
+                    if (itemHolding.CompareTag("CatPostMoving"))
+                    {
+                        itemHolding.tag = "CatPostHeld";
+                    }
                     if (itemHolding.GetComponent<Rigidbody2D>())
                     {
                         itemHolding.GetComponent<Rigidbody2D>().simulated = false;
