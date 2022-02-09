@@ -5,62 +5,61 @@ using TMPro;
 
 public class DialogueSign2 : Interactable
 {
-    [SerializeField] private TextAssetValue dialogueValue; //intermediate dialogue value
-    [SerializeField] private TextAsset myDialogue; // sign dialogue
-    [SerializeField] private Notification branchingDialogueNotification;
-
-    [SerializeField] private ItemDetector myFromObject; //ADDED
-    [SerializeField] private ItemDetectorValue fromObject; //ADDED
+    [SerializeField] private Notification infoDialogueNotification;
 
     [SerializeField] private GameObject popupPanel;
     [SerializeField] private GameObject[] catPost;
 
     private float nextActionTime = 4f;
     private float period = 4f;
+    private int postNo = 5;
+
+    [SerializeField] StageClassAssetValue stage1;
+    [SerializeField] StageClassAssetValue stage2;
+    [SerializeField] BoolAssetValue isStage1;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        isStage1.value = true;
     }
 
     // Update is called once per frame
+
     void Update()
     {
         GameObject[] posts = GameObject.FindGameObjectsWithTag("CatPostMoving");
-
-        if(posts.Length < 5)
+       
+        if (isStage1.value == true)
         {
-            if(Time.time > nextActionTime)
+            postNo = 5;
+            period = 4f;
+        }
+        else if (isStage1.value == false)
+        {
+            postNo = 1;
+            period = 2f;
+        }
+        
+        
+
+        if (posts.Length < postNo)
+        {
+
+            if (Time.time > nextActionTime)
             {
+                Debug.Log("next action1: " + nextActionTime);
                 nextActionTime = Time.time + period;
+                Debug.Log("next action2: " + nextActionTime);
                 SpawnRandomByPercentage();
             }
         }
 
-
         if (playerInRange)
         {
-            if (Input.GetKey(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.R))
             {
-                fromObject.value = myFromObject;
-
-
-
-                if (fromObject.value.itemPlaced)
-                {
-                    dialogueValue.value = myDialogue;
-                    branchingDialogueNotification.Raise();
-                }
-                else
-                {
-                    popupPanel.GetComponentInChildren<TextMeshProUGUI>().text = "Please place down a bowl first!";
-
-                    PopupPanelController.OpenPopup(popupPanel);
-                    popupPanel.SetActive(true);
-                    StartCoroutine(PopupPanelController.PopupAndDelay(5, popupPanel));
-
-                }
+                infoDialogueNotification.Raise();
             }
         }
     }
@@ -69,17 +68,31 @@ public class DialogueSign2 : Interactable
     {
         int randomPercentage = Random.Range(1, 100);
 
-        if (randomPercentage >= 1 && randomPercentage <= 70)
+        if(isStage1.value == true)
         {
-            Instantiate(catPost[0]);
+            if (randomPercentage >= 1 && randomPercentage <= 70)
+            {
+                Instantiate(catPost[0]);
+            }
+            else if (randomPercentage >= 71 && randomPercentage <= 100)
+            {
+                Instantiate(catPost[1]);
+            }
         }
-        else if (randomPercentage >= 71 && randomPercentage <= 90)
+        else if(isStage1.value == false)
         {
-            Instantiate(catPost[1]);
-        }
-        else if (randomPercentage >= 91 && randomPercentage <= 100)
-        {
-            Instantiate(catPost[2]);
+            if (randomPercentage >= 1 && randomPercentage <= 70)
+            {
+                Instantiate(catPost[0]);
+            }
+            else if (randomPercentage >= 71 && randomPercentage <= 90)
+            {
+                Instantiate(catPost[1]);
+            }
+            else if (randomPercentage >= 91 && randomPercentage <= 100)
+            {
+                Instantiate(catPost[2]);
+            }
         }
 
     }

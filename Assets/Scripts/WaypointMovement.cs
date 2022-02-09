@@ -7,6 +7,8 @@ public class WaypointMovement : MonoBehaviour
     [SerializeField] Transform[] waypoints;
     [SerializeField] float speed;
     [SerializeField] GameObject thisCatPost;
+    [SerializeField] BoolAssetValue isFirstStage;
+
     private GameObject waypointObject;
     private Transform currentWaypoint;
     private int currentWaypointIndex;
@@ -18,6 +20,7 @@ public class WaypointMovement : MonoBehaviour
         waypoints[1] = GameObject.Find("Waypoint2").transform;
         waypoints[2] = GameObject.Find("Waypoint3").transform;
         waypoints[3] = GameObject.Find("Waypoint4").transform;
+        waypoints[4] = GameObject.Find("Waypoint5").transform;
         transform.position = waypoints[0].position;
         /*  
         for (int i = 0; i < waypoints.Length; i++)
@@ -42,16 +45,33 @@ public class WaypointMovement : MonoBehaviour
             if (Vector3.Distance(transform.position, currentWaypoint.position) < 0.1f)
             {
                 //Reached the waypoint
+                isFirstStage.value = false;
+                if (isFirstStage.value == true)
+                {
+                    //Check to see if there are more waypoints
+                    if (currentWaypointIndex + 1 < waypoints.Length)
+                    {
+                        currentWaypointIndex++;
+                    }
+                    else
+                    {
+                        Destroy(thisCatPost);
+                    }
+                }
+                else if(isFirstStage.value == false)
+                {
+                    if (currentWaypointIndex + 1 < waypoints.Length - 2)
+                    {
+                        currentWaypointIndex++;
+                    }
+                    else
+                    {
+                        //Destroy(thisCatPost);
+                        thisCatPost.transform.position = waypoints[2].transform.position;
+                    }
+                }
 
-                //Check to see if there are more waypoints
-                if (currentWaypointIndex + 1 < waypoints.Length)
-                {
-                    currentWaypointIndex++;
-                }
-                else
-                {
-                    Destroy(thisCatPost);
-                }
+                
 
                 currentWaypoint = waypoints[currentWaypointIndex];
 

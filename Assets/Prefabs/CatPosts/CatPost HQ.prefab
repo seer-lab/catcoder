@@ -65,7 +65,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3426092384829418138, guid: 6cf03d12cba25cc48ae704e0ad0309a0, type: 3}
       propertyPath: m_Name
-      value: CatPost
+      value: CatPost HQ
+      objectReference: {fileID: 0}
+    - target: {fileID: 6397557527042664458, guid: 6cf03d12cba25cc48ae704e0ad0309a0, type: 3}
+      propertyPath: isFirstStage
+      value: 
+      objectReference: {fileID: 11400000, guid: d755480b1c37ad143b434c8fdfde5704, type: 2}
+    - target: {fileID: 6397557527042664458, guid: 6cf03d12cba25cc48ae704e0ad0309a0, type: 3}
+      propertyPath: waypoints.Array.size
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cf03d12cba25cc48ae704e0ad0309a0, type: 3}
