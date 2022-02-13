@@ -208,12 +208,16 @@ MonoBehaviour:
   myNotification: {fileID: 11400000, guid: 8258f61000917f742a5a29aa1b5df9a3, type: 2}
   dialogueValue: {fileID: 11400000, guid: f0584bf6230d50346b0582356fdfe617, type: 2}
   myDialogue:
-  - {fileID: 0}
+  - {fileID: 4900000, guid: 3db325c67234a03458b39b8e435f8853, type: 3}
+  - {fileID: 4900000, guid: e4640f8aee5eb074e8883a79bfaac59e, type: 3}
+  - {fileID: 4900000, guid: c5f6494308f760f41bf53b5cc80879b0, type: 3}
+  - {fileID: 4900000, guid: f9bf6458388204940823d2bf543a45fd, type: 3}
   scrollingDialogueNotification: {fileID: 11400000, guid: 390292279c7a33d47b9b3c9926a98975, type: 2}
   isSpeaking: {fileID: 11400000, guid: a71040a5973cfb147a51b43a0b418f11, type: 2}
   tile: {fileID: 11400000, guid: e6d924be31d218e468c2fddd7d0c6061, type: 2}
   tilemap: {fileID: 459324347}
   cell: {x: -8, y: 0, z: 0}
+  thisStage: {fileID: 11400000, guid: 28a4219641836da409dfe4852c75832b, type: 2}
 --- !u!1001 &30714960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5477,8 +5481,6 @@ MonoBehaviour:
   - {fileID: 3426092384829418138, guid: 6cf03d12cba25cc48ae704e0ad0309a0, type: 3}
   - {fileID: 1752335692838894891, guid: 75a1507a23727d443adc2d77d0d450fe, type: 3}
   - {fileID: 2264147972661244279, guid: bc2478fc26260474fb032cdf6b4839c0, type: 3}
-  stage1: {fileID: 11400000, guid: 1299e50037524f84e927688d35c20467, type: 2}
-  stage2: {fileID: 11400000, guid: 1cda0f5b33244b246ab30786bf3eed75, type: 2}
   isStage1: {fileID: 11400000, guid: d755480b1c37ad143b434c8fdfde5704, type: 2}
 --- !u!1001 &852746483075724690
 PrefabInstance:

@@ -14,11 +14,13 @@ public class DialogueNPC2 : Interactable
     [SerializeField] TileBase tile;
     [SerializeField] Tilemap tilemap;
     [SerializeField] Vector3Int cell;
+    [SerializeField] DialogueStateAssetValue thisStage;
 
     // Start is called before the first frame update
     void Start()
     {
         isSpeaking.value = false;
+        thisStage.currentStage = StageValues.stage1; 
     }
 
     // Update is called once per frame
@@ -33,15 +35,52 @@ public class DialogueNPC2 : Interactable
                     isSpeaking.value = true;
 
                     //IF-ELSE Logic for stages to set correct dialogue
+                    if(thisStage.currentStage == StageValues.stage1)
+                    {
+                        //First dialogue and phase 1
+                        UseDialogue(0);
+
+                        //Lock area after dialogue starts
+                        if (tilemap.HasTile(cell) == false)
+                        {
+                            tilemap.SetTile(cell, tile);
+                        }
+                    }
+                    if(thisStage.currentStage == StageValues.stage2)
+                    {
+                        //Post emergency stop, pre phase 2
+                        UseDialogue(1);
+
+                        //Begin phase 2
+                    }
+                    if(thisStage.currentStage == StageValues.stage3)
+                    {
+                        //Post phase 2, pre phase 3
+                        UseDialogue(2);
+
+                        //Begin phase 3
+                    }
+                    if(thisStage.currentStage == StageValues.stage4)
+                    {
+                        //Post phase 3
+                        UseDialogue(3);
+
+                        //Unblock area
+                        if (tilemap.HasTile(cell) == true)
+                        {
+                            tilemap.SetTile(cell, null);
+                        }
+                    }
+                    
                 }
             }
         }
     }
 
-    void UseDialogue()
+    void UseDialogue(int gotoStage)
     {
         //Play dialogue from array
-        dialogueValue.value = myDialogue[0]; //0 for now due to absence of logic
+        dialogueValue.value = myDialogue[gotoStage]; //0 for now due to absence of logic
         scrollingDialogueNotification.Raise();
     }
 }

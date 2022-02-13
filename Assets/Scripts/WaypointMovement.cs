@@ -66,7 +66,6 @@ public class WaypointMovement : MonoBehaviour
                     }
                     else
                     {
-                        //Destroy(thisCatPost);
                         thisCatPost.transform.position = waypoints[2].transform.position;
                     }
                 }

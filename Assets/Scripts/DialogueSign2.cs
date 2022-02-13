@@ -14,8 +14,7 @@ public class DialogueSign2 : Interactable
     private float period = 4f;
     private int postNo = 5;
 
-    [SerializeField] StageClassAssetValue stage1;
-    [SerializeField] StageClassAssetValue stage2;
+
     [SerializeField] BoolAssetValue isStage1;
 
     // Start is called before the first frame update
