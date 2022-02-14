@@ -7,7 +7,7 @@ public class WaypointMovement : MonoBehaviour
     [SerializeField] Transform[] waypoints;
     [SerializeField] float speed;
     [SerializeField] GameObject thisCatPost;
-    [SerializeField] BoolAssetValue isFirstStage;
+    [SerializeField] DialogueStateAssetValue thisStage;
 
     private GameObject waypointObject;
     private Transform currentWaypoint;
@@ -22,15 +22,7 @@ public class WaypointMovement : MonoBehaviour
         waypoints[3] = GameObject.Find("Waypoint4").transform;
         waypoints[4] = GameObject.Find("Waypoint5").transform;
         transform.position = waypoints[0].position;
-        /*  
-        for (int i = 0; i < waypoints.Length; i++)
-        {
-            string waypointName = "Waypoint" + i;
-            Debug.Log(waypointName);
-            waypointObject = GameObject.Find(waypointName);
-            waypoints[i] = waypointObject.transform;
-        }
-        */
+
         currentWaypointIndex = 0;
         currentWaypoint = waypoints[currentWaypointIndex];
     }
@@ -40,13 +32,21 @@ public class WaypointMovement : MonoBehaviour
     {
         if (thisCatPost.CompareTag("CatPostMoving"))
         {
+            if(thisStage.currentStage == StageValues.stage1 || thisStage.currentStage == StageValues.stage1a)
+            {
+                speed = 2;
+            }
+            else
+            {
+                speed = 1;
+            }
+
             transform.Translate(Vector3.left * Time.deltaTime * speed);
 
             if (Vector3.Distance(transform.position, currentWaypoint.position) < 0.1f)
             {
                 //Reached the waypoint
-                isFirstStage.value = false;
-                if (isFirstStage.value == true)
+                if (thisStage.currentStage == StageValues.stage1 || thisStage.currentStage == StageValues.stage1a || thisStage.currentStage == StageValues.stage2 || thisStage.currentStage == StageValues.stage2a)
                 {
                     //Check to see if there are more waypoints
                     if (currentWaypointIndex + 1 < waypoints.Length)
@@ -58,7 +58,7 @@ public class WaypointMovement : MonoBehaviour
                         Destroy(thisCatPost);
                     }
                 }
-                else if(isFirstStage.value == false)
+                else if(thisStage.currentStage == StageValues.stage3 || thisStage.currentStage == StageValues.stage3a || thisStage.currentStage == StageValues.stage4)
                 {
                     if (currentWaypointIndex + 1 < waypoints.Length - 2)
                     {

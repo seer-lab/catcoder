@@ -6,93 +6,56 @@ using TMPro;
 public class DialogueSign2 : Interactable
 {
     [SerializeField] private Notification infoDialogueNotification;
-
     [SerializeField] private GameObject popupPanel;
-    [SerializeField] private GameObject[] catPost;
 
-    private float nextActionTime = 4f;
-    private float period = 4f;
-    private int postNo = 5;
+    [SerializeField] StageClassAssetValue stageToInfo;
+    [SerializeField] StageClassAssetValue stageGeneral;
 
+    private int stage1noHQ;
+    private int stage1noMQ;
+    private int stage1forLen;
+    private int stage2noHQ;
+    private int stage2noMQ;
+    private int stage2forLen;
 
-    [SerializeField] BoolAssetValue isStage1;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        isStage1.value = true;
+        //Stage 1
+        stage1noHQ = Random.Range(5, 10);
+        stage1noMQ = 0;
+        stage1forLen = 0;
+
+        //Stage 2
+        stage2noHQ = Random.Range(5, 10);
+        stage2noMQ = Random.Range(5, 10);
+        stage2forLen = Random.Range(40, 50);
+
+        Debug.Log("Start done");
     }
 
     // Update is called once per frame
-
     void Update()
     {
-        GameObject[] posts = GameObject.FindGameObjectsWithTag("CatPostMoving");
-       
-        if (isStage1.value == true)
-        {
-            postNo = 5;
-            period = 4f;
-        }
-        else if (isStage1.value == false)
-        {
-            postNo = 1;
-            period = 2f;
-        }
-        
-        
-
-        if (posts.Length < postNo)
-        {
-
-            if (Time.time > nextActionTime)
-            {
-                Debug.Log("next action1: " + nextActionTime);
-                nextActionTime = Time.time + period;
-                Debug.Log("next action2: " + nextActionTime);
-                SpawnRandomByPercentage();
-            }
-        }
-
         if (playerInRange)
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
+                //Stage 1
+                stageToInfo.stage1noHQ = stage1noHQ;
+                stageToInfo.stage1noMQ = stage1noMQ;
+                stageToInfo.stage1forLen = stage1forLen;
+
+                //Stage 2
+                stageToInfo.stage2noHQ = stage2noHQ;
+                stageToInfo.stage2noMQ = stage2noMQ;
+                stageToInfo.stage2forLen = stage2forLen;
+
+                stageGeneral = stageToInfo;
+
                 infoDialogueNotification.Raise();
             }
         }
     }
 
-    private void SpawnRandomByPercentage()
-    {
-        int randomPercentage = Random.Range(1, 100);
-
-        if(isStage1.value == true)
-        {
-            if (randomPercentage >= 1 && randomPercentage <= 70)
-            {
-                Instantiate(catPost[0]);
-            }
-            else if (randomPercentage >= 71 && randomPercentage <= 100)
-            {
-                Instantiate(catPost[1]);
-            }
-        }
-        else if(isStage1.value == false)
-        {
-            if (randomPercentage >= 1 && randomPercentage <= 70)
-            {
-                Instantiate(catPost[0]);
-            }
-            else if (randomPercentage >= 71 && randomPercentage <= 90)
-            {
-                Instantiate(catPost[1]);
-            }
-            else if (randomPercentage >= 91 && randomPercentage <= 100)
-            {
-                Instantiate(catPost[2]);
-            }
-        }
-
-    }
+    
 }

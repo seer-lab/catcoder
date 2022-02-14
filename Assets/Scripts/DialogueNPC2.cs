@@ -46,25 +46,31 @@ public class DialogueNPC2 : Interactable
                             tilemap.SetTile(cell, tile);
                         }
                     }
-                    if(thisStage.currentStage == StageValues.stage2)
+                    if(thisStage.currentStage == StageValues.stage1a)
                     {
                         //Post emergency stop, pre phase 2
                         UseDialogue(1);
 
                         //Begin phase 2
+                        thisStage.currentStage = StageValues.stage2;
                     }
-                    if(thisStage.currentStage == StageValues.stage3)
+                    if(thisStage.currentStage == StageValues.stage2a)
                     {
                         //Post phase 2, pre phase 3
                         UseDialogue(2);
 
                         //Begin phase 3
+                        thisStage.currentStage = StageValues.stage3;
                     }
-                    if(thisStage.currentStage == StageValues.stage4)
+                    if(thisStage.currentStage == StageValues.stage3a)
                     {
                         //Post phase 3
                         UseDialogue(3);
 
+                        thisStage.currentStage = StageValues.stage4;
+                    }
+                    if(thisStage.currentStage == StageValues.stage5)
+                    {
                         //Unblock area
                         if (tilemap.HasTile(cell) == true)
                         {

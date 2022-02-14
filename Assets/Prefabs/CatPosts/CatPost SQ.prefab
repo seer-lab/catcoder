@@ -163,7 +163,7 @@ MonoBehaviour:
   - {fileID: 0}
   speed: 1
   thisCatPost: {fileID: 3426092384829418138}
-  isFirstStage: {fileID: 11400000, guid: d755480b1c37ad143b434c8fdfde5704, type: 2}
+  thisStage: {fileID: 11400000, guid: 28a4219641836da409dfe4852c75832b, type: 2}
 --- !u!50 &5966347871072669443
 Rigidbody2D:
   serializedVersion: 4
