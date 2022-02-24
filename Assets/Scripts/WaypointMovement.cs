@@ -32,13 +32,17 @@ public class WaypointMovement : MonoBehaviour
     {
         if (thisCatPost.CompareTag("CatPostMoving"))
         {
-            if(thisStage.currentStage == StageValues.stage1 || thisStage.currentStage == StageValues.stage1a)
+            if(thisStage.currentStage == StageValues.stage1)
             {
-                speed = 2;
+                speed = 2f;
+            }
+            else if (thisStage.currentStage == StageValues.stage1a || thisStage.currentStage == StageValues.stage2a || thisStage.currentStage == StageValues.stage3a)
+            {
+                speed = 4f;
             }
             else
             {
-                speed = 1;
+                speed = 1.5f;
             }
 
             transform.Translate(Vector3.left * Time.deltaTime * speed);

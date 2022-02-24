@@ -21,15 +21,31 @@ public class DialogueSign2 : Interactable
     private void Start()
     {
         //Stage 1
-        stage1noHQ = Random.Range(5, 10);
+        stage1noHQ = Random.Range(4, 8);
         stage1noMQ = 0;
         stage1forLen = 0;
 
         //Stage 2
-        stage2noHQ = Random.Range(5, 10);
-        stage2noMQ = Random.Range(5, 10);
-        stage2forLen = Random.Range(40, 50);
+        stage2noHQ = Random.Range(1, 5);
+        stage2noMQ = Random.Range(1, 3);
+        stage2forLen = Random.Range(20, 30);
 
+
+        /*
+        stageToInfo.stage1noHQ = 0;
+        stageToInfo.stage1noMQ = 0;
+        stageToInfo.stage1forLen = 0;
+        stageToInfo.stage2noHQ = 0;
+        stageToInfo.stage2noMQ = 0;
+        stageToInfo.stage2forLen = 0;
+
+        stageGeneral.stage1noHQ = 0;
+        stageGeneral.stage1noMQ = 0;
+        stageGeneral.stage1forLen = 0;
+        stageGeneral.stage2noHQ = 0;
+        stageGeneral.stage2noMQ = 0;
+        stageGeneral.stage2forLen = 0;
+        */
         Debug.Log("Start done");
     }
 
@@ -40,6 +56,7 @@ public class DialogueSign2 : Interactable
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
+                Debug.Log("TEST");
                 //Stage 1
                 stageToInfo.stage1noHQ = stage1noHQ;
                 stageToInfo.stage1noMQ = stage1noMQ;
@@ -50,7 +67,15 @@ public class DialogueSign2 : Interactable
                 stageToInfo.stage2noMQ = stage2noMQ;
                 stageToInfo.stage2forLen = stage2forLen;
 
-                stageGeneral = stageToInfo;
+                //Set the stages of general equal to stage info
+                stageGeneral.stage1noHQ = stageToInfo.stage1noHQ;
+                stageGeneral.stage1noMQ = stageToInfo.stage1noMQ;
+                stageGeneral.stage1forLen = stageToInfo.stage1forLen;
+                stageGeneral.stage2noHQ = stageToInfo.stage2noHQ;
+                stageGeneral.stage2noMQ = stageToInfo.stage2noMQ;
+                stageGeneral.stage2forLen = stageToInfo.stage2forLen;
+
+                Debug.Log("stage is: " + stageGeneral.stage1noHQ);
 
                 infoDialogueNotification.Raise();
             }

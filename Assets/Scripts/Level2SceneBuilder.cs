@@ -15,6 +15,8 @@ public class Level2SceneBuilder : MonoBehaviour
     [SerializeField] BoolAssetValue stageCompletion3a;
     [SerializeField] BoolAssetValue stageCompletion3b;
 
+    [SerializeField] private GameObject[] progressPanels;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,8 +38,8 @@ public class Level2SceneBuilder : MonoBehaviour
         }
         else if (thisStage.currentStage == StageValues.stage2)
         {
-            postNo = 5;
-            period = 4f;
+            postNo = 7;
+            period = 2f;
         }
         else if (thisStage.currentStage == StageValues.stage3)
         {
@@ -58,23 +60,54 @@ public class Level2SceneBuilder : MonoBehaviour
             }
         }
 
-
         //Progression for completion checks
         if (thisStage.currentStage == StageValues.stage2)
         {
+            //progressPanel.SetActive(true);
+
             if (stageCompletion2a.value == true && stageCompletion2b.value == true)
             {
+                //TODO: Make sure all objects are gone
+                //TODO: Speed up the conveyer to move them off faster
+                foreach (GameObject panel in progressPanels)
+                {
+                    panel.SetActive(false);
+                }
+
+
                 //Set stage to 2a
                 thisStage.currentStage = StageValues.stage2a;
+
+                //Clear the validation spot of objects
+                GameObject[] existingCatPosts = GameObject.FindGameObjectsWithTag("CatPostHeld");
+                foreach (GameObject catPost in existingCatPosts)
+                {
+                    GameObject.Destroy(catPost);
+                }
             }
         }
 
         if (thisStage.currentStage == StageValues.stage3)
         {
+            //progressPanel.SetActive(true);
+
             if (stageCompletion3a.value == true && stageCompletion3b.value == true)
             {
+                //Make sure all objects are gone
+                //Speed up the conveyer to move them off faster
+                foreach (GameObject panel in progressPanels)
+                {
+                    panel.SetActive(false);
+                }
+
                 //Set stage to 3a
                 thisStage.currentStage = StageValues.stage3a;
+
+                GameObject[] existingCatPosts = GameObject.FindGameObjectsWithTag("CatPostHeld");
+                foreach (GameObject catPost in existingCatPosts)
+                {
+                    GameObject.Destroy(catPost);
+                }
             }
         }
     }
@@ -86,17 +119,20 @@ public class Level2SceneBuilder : MonoBehaviour
         if (thisStage.currentStage == StageValues.stage1)
         {
             //Debug.Log("spawning");
+            //catPost[0].layer = 7;
+
+            //TODO: Determine if i need to change the layer mask for the first level OR figure out how to reset first scene
             Instantiate(catPost[0]);
         }
 
         //Phase 2
         else if (thisStage.currentStage == StageValues.stage2)
         {
-            if (randomPercentage >= 1 && randomPercentage <= 70)
+            if (randomPercentage >= 1 && randomPercentage <= 50)
             {
                 Instantiate(catPost[0]);
             }
-            else if (randomPercentage >= 71 && randomPercentage <= 100)
+            else if (randomPercentage >= 51 && randomPercentage <= 100)
             {
                 Instantiate(catPost[1]);
             }

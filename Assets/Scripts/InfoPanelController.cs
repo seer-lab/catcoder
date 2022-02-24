@@ -66,6 +66,7 @@ public class InfoPanelController : MonoBehaviour
     {
         isPlaying = true;
         infoCanvas.SetActive(true);
+        Debug.Log("stage is supposed to be :" + stage.stage1noHQ);
         Debug.Log("Enabled canvas");
         SetInfo();
     }
