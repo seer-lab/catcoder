@@ -62,7 +62,7 @@ public class ValidationDetector : MonoBehaviour
                     //and another script should take in both booleans SO's and check if they are both true, if this
                     //passes, than the stage with change to stage 2a
                     stageCompletion2.value = true;
-                    //hqItemCounter = 0;
+                    hqItemCounter = 0;
                 }
             }
             if (thisStage.currentStage == StageValues.stage3)
@@ -87,8 +87,8 @@ public class ValidationDetector : MonoBehaviour
                 if (hqItemCounter >= stage.stage2noHQ && mqItemCounter >= stage.stage2noMQ)
                 {
                     stageCompletion3.value = true;
-                    //hqItemCounter = 0;
-                    //mqItemCounter = 0;
+                    hqItemCounter = 0;
+                    mqItemCounter = 0;
                 }
             }
         }

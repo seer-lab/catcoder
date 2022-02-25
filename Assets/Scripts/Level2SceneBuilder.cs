@@ -141,15 +141,15 @@ public class Level2SceneBuilder : MonoBehaviour
         //Phase 3
         else if (thisStage.currentStage == StageValues.stage3)
         {
-            if (randomPercentage >= 1 && randomPercentage <= 70)
+            if (randomPercentage >= 1 && randomPercentage <= 30)
             {
                 Instantiate(catPost[0]);
             }
-            else if (randomPercentage >= 71 && randomPercentage <= 90)
+            else if (randomPercentage >= 31 && randomPercentage <= 80)
             {
                 Instantiate(catPost[1]);
             }
-            else if (randomPercentage >= 91 && randomPercentage <= 100)
+            else if (randomPercentage >= 81 && randomPercentage <= 100)
             {
                 Instantiate(catPost[2]);
             }
@@ -159,6 +159,7 @@ public class Level2SceneBuilder : MonoBehaviour
         else if (thisStage.currentStage == StageValues.stage4)
         {
             Instantiate(catPost[3]);
+            //thisStage.currentStage = StageValues.stage5;
         }
     }
 }

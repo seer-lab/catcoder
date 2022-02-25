@@ -74,8 +74,6 @@ public class WaypointMovement : MonoBehaviour
                     }
                 }
 
-                
-
                 currentWaypoint = waypoints[currentWaypointIndex];
 
                 //Go towards next waypoint
