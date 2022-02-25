@@ -20,6 +20,7 @@ public class DialogueSign2 : Interactable
 
     private void Start()
     {
+        /*
         //Stage 1
         stage1noHQ = Random.Range(4, 8);
         stage1noMQ = 0;
@@ -30,25 +31,10 @@ public class DialogueSign2 : Interactable
         stage2noMQ = Random.Range(1, 3);
         stage2forLen = Random.Range(20, 30);
 
-        //Stage 1
-        stageToInfo.stage1noHQ = stage1noHQ;
-        stageToInfo.stage1noMQ = stage1noMQ;
-        stageToInfo.stage1forLen = stage1forLen;
 
-        //Stage 2
-        stageToInfo.stage2noHQ = stage2noHQ;
-        stageToInfo.stage2noMQ = stage2noMQ;
-        stageToInfo.stage2forLen = stage2forLen;
-
-        //Set the stages of general equal to stage info
-        stageGeneral.stage1noHQ = stageToInfo.stage1noHQ;
-        stageGeneral.stage1noMQ = stageToInfo.stage1noMQ;
-        stageGeneral.stage1forLen = stageToInfo.stage1forLen;
-        stageGeneral.stage2noHQ = stageToInfo.stage2noHQ;
-        stageGeneral.stage2noMQ = stageToInfo.stage2noMQ;
-        stageGeneral.stage2forLen = stageToInfo.stage2forLen;
 
         Debug.Log("Start done");
+        */
     }
 
     // Update is called once per frame
@@ -56,8 +42,29 @@ public class DialogueSign2 : Interactable
     {
         if (playerInRange)
         {
+            
+
             if (Input.GetKeyDown(KeyCode.R))
             {
+                /*
+                //Stage 1
+                stageToInfo.stage1noHQ = stage1noHQ;
+                stageToInfo.stage1noMQ = stage1noMQ;
+                stageToInfo.stage1forLen = stage1forLen;
+
+                //Stage 2
+                stageToInfo.stage2noHQ = stage2noHQ;
+                stageToInfo.stage2noMQ = stage2noMQ;
+                stageToInfo.stage2forLen = stage2forLen;
+                */
+                //Set the stages of general equal to stage info
+                stageGeneral.stage1noHQ = stageToInfo.stage1noHQ;
+                stageGeneral.stage1noMQ = stageToInfo.stage1noMQ;
+                stageGeneral.stage1forLen = stageToInfo.stage1forLen;
+                stageGeneral.stage2noHQ = stageToInfo.stage2noHQ;
+                stageGeneral.stage2noMQ = stageToInfo.stage2noMQ;
+                stageGeneral.stage2forLen = stageToInfo.stage2forLen;
+                
                 infoDialogueNotification.Raise();
             }
         }

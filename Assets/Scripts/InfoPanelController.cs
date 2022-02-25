@@ -32,23 +32,6 @@ public class InfoPanelController : MonoBehaviour
     private void Start()
     {
         isPlaying = false;
-        /*
-        Debug.Log("starting");
-        isPlaying = false;
-
-        //Stage 1
-        stage.stage1noHQ = Random.Range(5, 10);
-        stage.stage1noMQ = 0;
-        stage.stage1forLen = 0;
-
-        //Stage 2
-        stage.stage2noHQ = Random.Range(5, 10);
-        stage.stage2noMQ = Random.Range(5, 10);
-        stage.stage2forLen = Random.Range(40, 50);
-
-        Debug.Log("Start done");
-        */
-
     }
     void Update()
     {

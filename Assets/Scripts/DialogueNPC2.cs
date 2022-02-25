@@ -20,7 +20,7 @@ public class DialogueNPC2 : Interactable
     void Start()
     {
         isSpeaking.value = false;
-        thisStage.currentStage = StageValues.stage1; 
+        thisStage.currentStage = StageValues.stage0; 
     }
 
     // Update is called once per frame
@@ -35,7 +35,7 @@ public class DialogueNPC2 : Interactable
                     isSpeaking.value = true;
 
                     //IF-ELSE Logic for stages to set correct dialogue
-                    if(thisStage.currentStage == StageValues.stage1)
+                    if(thisStage.currentStage == StageValues.stage0)
                     {
                         //First dialogue and phase 1
                         UseDialogue(0);
@@ -45,6 +45,7 @@ public class DialogueNPC2 : Interactable
                         {
                             tilemap.SetTile(cell, tile);
                         }
+                        thisStage.currentStage = StageValues.stage1;
                     }
                     if(thisStage.currentStage == StageValues.stage1a)
                     {

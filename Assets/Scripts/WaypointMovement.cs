@@ -32,7 +32,7 @@ public class WaypointMovement : MonoBehaviour
     {
         if (thisCatPost.CompareTag("CatPostMoving"))
         {
-            if(thisStage.currentStage == StageValues.stage1)
+            if(thisStage.currentStage == StageValues.stage0 || thisStage.currentStage == StageValues.stage1)
             {
                 speed = 2f;
             }
@@ -50,7 +50,9 @@ public class WaypointMovement : MonoBehaviour
             if (Vector3.Distance(transform.position, currentWaypoint.position) < 0.1f)
             {
                 //Reached the waypoint
-                if (thisStage.currentStage == StageValues.stage1 || thisStage.currentStage == StageValues.stage1a || thisStage.currentStage == StageValues.stage2 || thisStage.currentStage == StageValues.stage2a)
+                if (thisStage.currentStage == StageValues.stage0 || thisStage.currentStage == StageValues.stage1 || 
+                    thisStage.currentStage == StageValues.stage1a || thisStage.currentStage == StageValues.stage2 || 
+                    thisStage.currentStage == StageValues.stage2a || thisStage.currentStage == StageValues.stage3a)
                 {
                     //Check to see if there are more waypoints
                     if (currentWaypointIndex + 1 < waypoints.Length)
@@ -62,7 +64,8 @@ public class WaypointMovement : MonoBehaviour
                         Destroy(thisCatPost);
                     }
                 }
-                else if(thisStage.currentStage == StageValues.stage3 || thisStage.currentStage == StageValues.stage3a || thisStage.currentStage == StageValues.stage4)
+                else if(thisStage.currentStage == StageValues.stage3 || thisStage.currentStage == StageValues.stage3a || 
+                    thisStage.currentStage == StageValues.stage4 || thisStage.currentStage == StageValues.stage5)
                 {
                     if (currentWaypointIndex + 1 < waypoints.Length - 2)
                     {

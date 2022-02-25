@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum StageValues
 {
+    stage0,  //Nothing yet to happen
     stage1,  //Introduction and dialogue before hitting the emergency stop
     stage1a, //Intermediary
     stage2,  //After emergency stop is hit, and before phase 2 begins

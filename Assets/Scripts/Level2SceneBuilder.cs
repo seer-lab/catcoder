@@ -31,7 +31,7 @@ public class Level2SceneBuilder : MonoBehaviour
     {
         GameObject[] posts = GameObject.FindGameObjectsWithTag("CatPostMoving");
 
-        if (thisStage.currentStage == StageValues.stage1)
+        if (thisStage.currentStage == StageValues.stage0 || thisStage.currentStage == StageValues.stage1)
         {
             postNo = 10;
             period = 1f;
@@ -84,6 +84,8 @@ public class Level2SceneBuilder : MonoBehaviour
                 {
                     GameObject.Destroy(catPost);
                 }
+                GameObject leftoverCatPost = GameObject.FindGameObjectWithTag("CatPostMoving");
+                GameObject.Destroy(leftoverCatPost);
             }
         }
 
@@ -116,7 +118,7 @@ public class Level2SceneBuilder : MonoBehaviour
         int randomPercentage = Random.Range(1, 100);
 
         //Phase 1
-        if (thisStage.currentStage == StageValues.stage1)
+        if (thisStage.currentStage == StageValues.stage0 || thisStage.currentStage == StageValues.stage1)
         {
             //Debug.Log("spawning");
             //catPost[0].layer = 7;
@@ -159,7 +161,7 @@ public class Level2SceneBuilder : MonoBehaviour
         else if (thisStage.currentStage == StageValues.stage4)
         {
             Instantiate(catPost[3]);
-            //thisStage.currentStage = StageValues.stage5;
+            thisStage.currentStage = StageValues.stage5;
         }
     }
 }

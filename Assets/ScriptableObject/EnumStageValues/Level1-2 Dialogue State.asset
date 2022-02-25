@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d35e73edb15ff4688ce399302fddce, type: 3}
   m_Name: Level1-2 Dialogue State
   m_EditorClassIdentifier: 
-  currentStage: 0
+  currentStage: 8
