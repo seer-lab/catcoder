@@ -808,11 +808,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: e607526d63118294784dceda66fb9dc7, type: 2}
     - target: {fileID: 2094089704, guid: 110c67b0da4d61141ae21a871212c4dd, type: 3}
       propertyPath: playerPosition.x
-      value: 0.5
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2094089704, guid: 110c67b0da4d61141ae21a871212c4dd, type: 3}
       propertyPath: playerPosition.y
-      value: -5
+      value: -7.5
       objectReference: {fileID: 0}
     - target: {fileID: 7952137913485197014, guid: 110c67b0da4d61141ae21a871212c4dd, type: 3}
       propertyPath: m_Name

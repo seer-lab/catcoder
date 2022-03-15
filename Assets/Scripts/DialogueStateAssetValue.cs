@@ -11,6 +11,7 @@ public enum StageValues
     stage2a, //Intermediary
     stage3,  //After success of phase 2, and before phase 3 beings
     stage3a, //Intermediary
+
     stage4,  //After success of the final phase
     stage5,  //After picking up legendary cat post
 }
