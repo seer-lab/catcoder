@@ -9,7 +9,10 @@ public class OrbitObject : MonoBehaviour
     [SerializeField] GameObject catnipObjects;
 
     [SerializeField] Vector2 centrePoint;
+
     private float angle;
+
+    [SerializeField] private OrbitObjectsActiveAssetValue activeOrbit;
 
     // Start is called before the first frame update
     void Start()
@@ -30,38 +33,64 @@ public class OrbitObject : MonoBehaviour
     {
         Debug.Log("collision" + collision.transform.name);
 
-        if (collision.gameObject.name == "CatnipChar(Clone)" && gameObject.name == "OrbitFar(Clone)")
+        if (activeOrbit.currentActiveOrbit == OrbitsActive.farActive)
         {
-            Debug.Log("Char Matched: " + collision.gameObject.name + " and " + gameObject);
-            MatchedObjects(collision.gameObject);
+            if (collision.gameObject.name == "CatObjectFar(Clone)" && gameObject.name == "OrbitFar(Clone)")
+            {
+                Debug.Log("Char Matched: " + collision.gameObject.name + " and " + gameObject);
+                MatchedObjects(collision.gameObject);
+            }
+            else
+            {
+                Debug.Log("No match");
+                Destroy(collision.gameObject);
+            }
         }
-        else if (collision.gameObject.name == "CatnipBool(Clone)" && gameObject.name == "OrbitOuter(Clone)")
+        else if (activeOrbit.currentActiveOrbit == OrbitsActive.outerActive)
         {
-            Debug.Log("Bool Matched: " + collision.gameObject.name + " and " + gameObject);
-            MatchedObjects(collision.gameObject);
+            if (collision.gameObject.name == "CatObjectOuter(Clone)" && gameObject.name == "OrbitOuter(Clone)")
+            {
+                Debug.Log("Bool Matched: " + collision.gameObject.name + " and " + gameObject);
+                MatchedObjects(collision.gameObject);
+            }
+            else
+            {
+                Debug.Log("No match");
+                Destroy(collision.gameObject);
+            }
         }
-        else if (collision.gameObject.name == "CatnipInt(Clone)" && gameObject.name == "OrbitMid(Clone)")
+        else if (activeOrbit.currentActiveOrbit == OrbitsActive.midActive)
         {
-            Debug.Log("Int Matched: " + collision.gameObject.name + " and " + gameObject);
-            MatchedObjects(collision.gameObject);
+            if (collision.gameObject.name == "CatObjectMid(Clone)" && gameObject.name == "OrbitMid(Clone)")
+            {
+                Debug.Log("Int Matched: " + collision.gameObject.name + " and " + gameObject);
+                MatchedObjects(collision.gameObject);
+            }
+            else
+            {
+                Debug.Log("No match");
+                Destroy(collision.gameObject);
+            }
         }
-        else if (collision.gameObject.name == "CatnipFloat(Clone)" && gameObject.name == "OrbitInner(Clone)")
+        else if(activeOrbit.currentActiveOrbit == OrbitsActive.innerActive)
         {
-            Debug.Log("Float Matched: " + collision.gameObject.name + " and " + gameObject);
-            MatchedObjects(collision.gameObject);
+            if (collision.gameObject.name == "CatObjectInner(Clone)" && gameObject.name == "OrbitInner(Clone)")
+            {
+                Debug.Log("Float Matched: " + collision.gameObject.name + " and " + gameObject);
+                MatchedObjects(collision.gameObject);
+            }
+            else
+            {
+                Debug.Log("No match");
+                Destroy(collision.gameObject);
+            }
         }
-        else
-        {
-            Debug.Log("No match");
-            Destroy(collision.gameObject);
-        }
-        //collision.gameObject.SetActive(false);
-        //gameObject.SetActive(false);
     }
 
     public void MatchedObjects(GameObject collisionObject)
     {
         Destroy(collisionObject);
-        Destroy(gameObject);
+        gameObject.transform.localScale = new Vector3(0, 0, 0);
+
     }
 }

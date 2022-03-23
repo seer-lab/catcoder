@@ -37,7 +37,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2191865468746338251, guid: 4da72a4a62161f3418b7030127509c3b, type: 3}
       propertyPath: m_Name
-      value: CatnipChar
+      value: CatObjectOuter
       objectReference: {fileID: 0}
     - target: {fileID: 2191865468746338251, guid: 4da72a4a62161f3418b7030127509c3b, type: 3}
       propertyPath: m_TagString
@@ -46,6 +46,14 @@ PrefabInstance:
     - target: {fileID: 2191865468746338255, guid: 4da72a4a62161f3418b7030127509c3b, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191865468746338255, guid: 4da72a4a62161f3418b7030127509c3b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191865468746338255, guid: 4da72a4a62161f3418b7030127509c3b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 2191865468746338255, guid: 4da72a4a62161f3418b7030127509c3b, type: 3}
       propertyPath: m_LocalPosition.x

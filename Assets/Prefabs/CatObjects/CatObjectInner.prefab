@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2688432415333748944, guid: a5872a623998396498da5fb87a39eb4c, type: 3}
       propertyPath: m_Name
-      value: CatnipInt
+      value: CatObjectInner
       objectReference: {fileID: 0}
     - target: {fileID: 2688432415333748944, guid: a5872a623998396498da5fb87a39eb4c, type: 3}
       propertyPath: m_TagString
@@ -30,7 +30,7 @@ PrefabInstance:
     - target: {fileID: 2688432415333748947, guid: a5872a623998396498da5fb87a39eb4c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e29ecf1df7562354588fac9720efe7ee, type: 3}
+      objectReference: {fileID: 21300000, guid: 0c463223284724f4390c9a63fa93e7e4, type: 3}
     - target: {fileID: 2688432415333748947, guid: a5872a623998396498da5fb87a39eb4c, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -46,6 +46,14 @@ PrefabInstance:
     - target: {fileID: 2688432415333748948, guid: a5872a623998396498da5fb87a39eb4c, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2688432415333748948, guid: a5872a623998396498da5fb87a39eb4c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2688432415333748948, guid: a5872a623998396498da5fb87a39eb4c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 2688432415333748948, guid: a5872a623998396498da5fb87a39eb4c, type: 3}
       propertyPath: m_LocalPosition.x

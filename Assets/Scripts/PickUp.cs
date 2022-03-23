@@ -44,10 +44,6 @@ public class PickUp : MonoBehaviour
                     {
                         itemHolding.GetComponent<Rigidbody2D>().simulated = true;
                     }
-                    if (itemHolding.CompareTag("Catnip"))
-                    {
-                        itemHolding.GetComponent<BoxCollider2D>().isTrigger = false;
-                    }
                     itemHolding = null;
                 }
 
@@ -69,10 +65,6 @@ public class PickUp : MonoBehaviour
                     {
                         itemHolding.GetComponent<Rigidbody2D>().simulated = false;
                     }
-                    if (itemHolding.CompareTag("Catnip"))
-                    {
-                        itemHolding.GetComponent<BoxCollider2D>().isTrigger = true;
-                    }
                 }
             }
         }
@@ -85,16 +77,8 @@ public class PickUp : MonoBehaviour
                 itemHolding.GetComponent<Rigidbody2D>().simulated = true;
                 itemHolding.GetComponent<Rigidbody2D>().isKinematic = false;
                 itemHolding.GetComponent<Rigidbody2D>().AddForce(transform.position + Direction * 7500);
-                StartCoroutine(Timer(itemHolding, 0.04f));
                 itemHolding = null;
             }
         }
-    }
-
-    IEnumerator Timer(GameObject itemHolding, float time)
-    {
-        yield return new WaitForSeconds(time);
-        Debug.Log("Now non-trigger");
-        itemHolding.GetComponent<BoxCollider2D>().isTrigger = false;
     }
 }

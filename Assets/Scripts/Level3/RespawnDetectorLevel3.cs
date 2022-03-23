@@ -5,9 +5,9 @@ using TMPro;
 
 public class RespawnDetectorLevel3 : MonoBehaviour
 {
-    public bool currentlyOccupied;
+    [SerializeField] public GameObject prefabObject; //Select from a list of prefabs
 
-    public List<GameObject> prefabList = new List<GameObject>(); //Select from a list of prefabs
+    private bool currentlyOccupied;
 
     private void Start()
     {
@@ -43,10 +43,9 @@ public class RespawnDetectorLevel3 : MonoBehaviour
 
     public void Spawn()
     {
-        int prefabIndex = Random.Range(0, prefabList.Count); //min inclusive, max exclusive
-        GameObject bucket = Instantiate(prefabList[prefabIndex]);
-        bucket.transform.position = transform.position;
-        bucket.transform.parent = transform;
+        GameObject catObject = Instantiate(prefabObject);
+        catObject.transform.position = transform.position;
+        catObject.transform.parent = transform;
 
         currentlyOccupied = true;
     }
