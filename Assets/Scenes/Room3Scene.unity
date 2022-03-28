@@ -1618,6 +1618,10 @@ PrefabInstance:
       propertyPath: activeOrbit
       value: 
       objectReference: {fileID: 11400000, guid: f0a75f15f45ec1246980449e84d22ab9, type: 2}
+    - target: {fileID: 4711192848070926991, guid: 47598f8c91359a449ace3afc198b15d3, type: 3}
+      propertyPath: numberThrown
+      value: 
+      objectReference: {fileID: 11400000, guid: d15b2a488ee59654cad3e044f98db8b8, type: 2}
     - target: {fileID: 7909830673510691666, guid: 47598f8c91359a449ace3afc198b15d3, type: 3}
       propertyPath: m_RootOrder
       value: 3

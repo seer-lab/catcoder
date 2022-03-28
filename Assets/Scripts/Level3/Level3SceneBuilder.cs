@@ -36,6 +36,8 @@ public class Level3SceneBuilder : MonoBehaviour
 
     [SerializeField] private OrbitObjectsActiveAssetValue activeOrbit;
 
+    private bool wasRemoved = false;
+
     private void Start()
     {
         currentlySpawning = Spawning.positive;
@@ -126,16 +128,29 @@ public class Level3SceneBuilder : MonoBehaviour
         //Outer Layer
         if (activeOrbit.currentActiveOrbit == OrbitsActive.outerActive)
         {
+            var counter = outerObjectList.Count;
+            
             foreach (var activeObjects in outerObjectList)
             {
+                
+                counter--;
+                //Debug.Log(counter);
                 if (activeObjects.gameObject.transform.localScale == new Vector3(1.2f, 1.2f, 1.2f))
                 {
                     checkActives = true;
                 }
                 else
                 {
-                    //Remove recently de-activated object from the list
                     outerObjectList.Remove(activeObjects);
+                    Debug.Log("removed one");
+                    wasRemoved = true;
+                    Debug.Log("was removed?: " + wasRemoved);
+                }
+                Debug.Log("was removed?: " + wasRemoved + " counter: " + counter);
+                if (wasRemoved == true && counter == 0)
+                {
+                    //Remove recently de-activated object from the list
+                    wasRemoved = false;
 
                     //If outerobjectslist is empty set active layer to mid
                     if (outerObjectList.Count == 0)
@@ -167,9 +182,12 @@ public class Level3SceneBuilder : MonoBehaviour
 
         if (activeOrbit.currentActiveOrbit == OrbitsActive.midActive)
         {
-            Debug.Log("Layer 3");
-            foreach(var activeObjects in midObjectList)
+            var counter = midObjectList.Count;
+
+            foreach (var activeObjects in midObjectList)
             {
+                counter--;
+
                 if (activeObjects.gameObject.transform.localScale == new Vector3(1.2f, 1.2f, 1.2f))
                 {
                     checkActives = true;
@@ -178,6 +196,12 @@ public class Level3SceneBuilder : MonoBehaviour
                 {
                     //Remove recently de-activated object from the list
                     midObjectList.Remove(activeObjects);
+                    wasRemoved = true;
+                    
+                }
+                if (wasRemoved == true && counter == 0)
+                {
+                    wasRemoved = false;
 
                     if (midObjectList.Count == 0)
                     {
@@ -209,9 +233,14 @@ public class Level3SceneBuilder : MonoBehaviour
 
         if (activeOrbit.currentActiveOrbit == OrbitsActive.innerActive)
         {
-            Debug.Log("Layer 4");
+            //Debug.Log("Layer 4");
+
+            var counter = innerObjectList.Count;
+
             foreach(var activeObjects in innerObjectList)
             {
+                counter--;
+
                 if (activeObjects.gameObject.transform.localScale == new Vector3(1.1f, 1.1f, 1.1f))
                 {
                     checkActives = true;
@@ -220,6 +249,13 @@ public class Level3SceneBuilder : MonoBehaviour
                 {
                     //Remove recently de-activated object from the list
                     innerObjectList.Remove(activeObjects);
+                    wasRemoved = true;
+
+                    
+                }
+                if (wasRemoved == true && counter == 0)
+                {
+                    wasRemoved = false;
 
                     if (innerObjectList.Count == 0)
                     {
@@ -233,7 +269,7 @@ public class Level3SceneBuilder : MonoBehaviour
 
                         midObjectList = new List<GameObject>(orbitObjectsMid.arrayValue);
 
-                        
+
                         foreach (var previousObjects in midObjectList)
                         {
                             previousObjects.gameObject.transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
