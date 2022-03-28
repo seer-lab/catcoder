@@ -11,7 +11,7 @@ public enum Spawning
 public class Level3SceneBuilder : MonoBehaviour
 {
     [SerializeField] private GameObject bossObject;
-    [SerializeField] private GameObject[] orbitObjects;
+    [SerializeField] private GameObject[] orbitObjects; //set gotten from the scene
 
     [SerializeField] private PlayerMovement player;
 
@@ -22,7 +22,18 @@ public class Level3SceneBuilder : MonoBehaviour
     private int spawningCounter;
     private int activatingCounter;
 
-    [SerializeField] private TdArrayAssetValue orbitObjectsArray;
+    //[SerializeField] private TdArrayAssetValue orbitObjectsArray;      //Set of all active or not
+
+    [SerializeField] private ArrayAssetValue orbitObjectsInner;
+    [SerializeField] private ArrayAssetValue orbitObjectsMid;
+    [SerializeField] private ArrayAssetValue orbitObjectsOuter;
+    [SerializeField] private ArrayAssetValue orbitObjectsFar;
+
+    private List<GameObject> farObjectList;
+    private List<GameObject> outerObjectList;
+    private List<GameObject> midObjectList;
+    private List<GameObject> innerObjectList;
+
     [SerializeField] private OrbitObjectsActiveAssetValue activeOrbit;
 
     private void Start()
@@ -33,16 +44,27 @@ public class Level3SceneBuilder : MonoBehaviour
         activatingCounter = 0;
 
         player.speed = 8;
-        orbitObjectsArray.tdArrayValue = new GameObject[6, 4];
+        //orbitObjectsArray.tdArrayValue = new GameObject[6, 4];
+
+        orbitObjectsInner.arrayValue = new GameObject[6];
+        orbitObjectsMid.arrayValue = new GameObject[6];
+        orbitObjectsOuter.arrayValue = new GameObject[6];
+        orbitObjectsFar.arrayValue = new GameObject[6];
 
         //Default far set to active
         activeOrbit.currentActiveOrbit = OrbitsActive.farActive;
+
+        farObjectList = new List<GameObject>();
+        outerObjectList = new List<GameObject>();
+        midObjectList = new List<GameObject>();
+        innerObjectList = new List<GameObject>();
     }
     private void Update()
     {
         if (spawningCounter == 6)
         {
             currentlySpawning = Spawning.negative;
+            CheckActives();
         }
 
         if (currentlySpawning == Spawning.positive)
@@ -50,31 +72,48 @@ public class Level3SceneBuilder : MonoBehaviour
             if (Time.time > nextActionTime)
             {
                 nextActionTime = Time.time + period;
+                /*
                 orbitObjectsArray.tdArrayValue[spawningCounter, 0] = Instantiate(orbitObjects[0], bossObject.transform.position, Quaternion.identity);
                 orbitObjectsArray.tdArrayValue[spawningCounter, 1] = Instantiate(orbitObjects[1], bossObject.transform.position, Quaternion.identity);
                 orbitObjectsArray.tdArrayValue[spawningCounter, 2] = Instantiate(orbitObjects[2], bossObject.transform.position, Quaternion.identity);
                 orbitObjectsArray.tdArrayValue[spawningCounter, 3] = Instantiate(orbitObjects[3], bossObject.transform.position, Quaternion.identity);
-                spawningCounter += 1;
-            }
-        }
+                */
 
-        CheckActives();
+                orbitObjectsInner.arrayValue[spawningCounter] = Instantiate(orbitObjects[0], bossObject.transform.position, Quaternion.identity);
+                orbitObjectsMid.arrayValue[spawningCounter] =   Instantiate(orbitObjects[1], bossObject.transform.position, Quaternion.identity);
+                orbitObjectsOuter.arrayValue[spawningCounter] = Instantiate(orbitObjects[2], bossObject.transform.position, Quaternion.identity);
+                orbitObjectsFar.arrayValue[spawningCounter] =   Instantiate(orbitObjects[3], bossObject.transform.position, Quaternion.identity);
+
+                innerObjectList.Add(orbitObjectsInner.arrayValue[spawningCounter]);
+                midObjectList.Add(orbitObjectsMid.arrayValue[spawningCounter]);
+                outerObjectList.Add(orbitObjectsOuter.arrayValue[spawningCounter]);
+                farObjectList.Add(orbitObjectsFar.arrayValue[spawningCounter]);
+                spawningCounter += 1;
+
+            }
+        }    
     }
 
     public void CheckActives()
     {
-        var arraylen = orbitObjectsArray.tdArrayValue.GetLength(0);
         var checkActives = false;
+        
 
         //Far Layer
         if (activeOrbit.currentActiveOrbit == OrbitsActive.farActive)
         {
-            for (int i = 0; i < arraylen; i++)
+            foreach(var activeObjects in farObjectList)
             {
-                //If one exsists in the array, flag active as true
-                if (orbitObjectsArray.tdArrayValue[i, 3].gameObject.transform.localScale == new Vector3(1, 1, 1))
+                if (activeObjects.gameObject.transform.localScale == new Vector3(1, 1, 1))
                 {
                     checkActives = true;
+                }
+                else
+                {
+                    if (farObjectList.Count == 0)
+                    {
+                        activeOrbit.currentActiveOrbit = OrbitsActive.outerActive;
+                    }
                 }
             }
 
@@ -87,26 +126,35 @@ public class Level3SceneBuilder : MonoBehaviour
         //Outer Layer
         if (activeOrbit.currentActiveOrbit == OrbitsActive.outerActive)
         {
-            Debug.Log("Layer 2");
-            for (int i = 0; i < arraylen; i++)
+            foreach (var activeObjects in outerObjectList)
             {
-                //If one exsists in the array, flag active as true
-                if (orbitObjectsArray.tdArrayValue[i, 2].gameObject.transform.localScale == new Vector3(1.2f, 1.2f, 1.2f))
+                if (activeObjects.gameObject.transform.localScale == new Vector3(1.2f, 1.2f, 1.2f))
                 {
                     checkActives = true;
                 }
                 else
                 {
-                    Debug.Log("At least one in layer 2 has been deactivated");
-                    //Reactivate layer 1
-                    activeOrbit.currentActiveOrbit = OrbitsActive.farActive;
+                    //Remove recently de-activated object from the list
+                    outerObjectList.Remove(activeObjects);
 
-                    //Set previous layer back to true
-                    for (int j = 0; j < arraylen; j++)
+                    //If outerobjectslist is empty set active layer to mid
+                    if (outerObjectList.Count == 0)
                     {
-                        orbitObjectsArray.tdArrayValue[j, 3].gameObject.transform.localScale = new Vector3(1, 1, 1);
+                        activeOrbit.currentActiveOrbit = OrbitsActive.midActive;
                     }
+                    //else set back to far and regen previous layer
+                    else
+                    {
+                        Debug.Log("At least one in layer 2 has been deactivated");
 
+                        activeOrbit.currentActiveOrbit = OrbitsActive.farActive;
+
+                        foreach (var previousObjects in farObjectList)
+                        {
+                            //Reactivate the entire previous layer
+                            previousObjects.gameObject.transform.localScale = new Vector3(1, 1, 1);
+                        }
+                    }
                 }
             }
 
@@ -114,30 +162,42 @@ public class Level3SceneBuilder : MonoBehaviour
             {
                 activeOrbit.currentActiveOrbit = OrbitsActive.midActive;
             }
+
         }
 
         if (activeOrbit.currentActiveOrbit == OrbitsActive.midActive)
         {
             Debug.Log("Layer 3");
-            for (int i = 0; i < arraylen; i++)
+            foreach(var activeObjects in midObjectList)
             {
-                //If one exsists in the array, flag active as true
-                if (orbitObjectsArray.tdArrayValue[i, 1].gameObject.transform.localScale == new Vector3(1.2f, 1.2f, 1.2f))
+                if (activeObjects.gameObject.transform.localScale == new Vector3(1.2f, 1.2f, 1.2f))
                 {
                     checkActives = true;
                 }
                 else
                 {
-                    Debug.Log("At least one in layer 3 has been deactivated");
-                    //Reactivate layer 1
-                    activeOrbit.currentActiveOrbit = OrbitsActive.outerActive;
+                    //Remove recently de-activated object from the list
+                    midObjectList.Remove(activeObjects);
 
-                    //Set previous layer back to true
-                    for (int j = 0; j < arraylen; j++)
+                    if (midObjectList.Count == 0)
                     {
-                        orbitObjectsArray.tdArrayValue[j, 2].gameObject.transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+                        activeOrbit.currentActiveOrbit = OrbitsActive.innerActive;
                     }
+                    else
+                    {
+                        Debug.Log("At least one in layer 3 has been deactivated");
 
+                        activeOrbit.currentActiveOrbit = OrbitsActive.outerActive;
+
+
+                        outerObjectList = new List<GameObject>(orbitObjectsOuter.arrayValue);
+
+                        foreach (var previousObjects in outerObjectList)
+                        {
+                            //Reactivate the entire previous layer
+                            previousObjects.gameObject.transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+                        }
+                    }
                 }
             }
 
@@ -150,25 +210,35 @@ public class Level3SceneBuilder : MonoBehaviour
         if (activeOrbit.currentActiveOrbit == OrbitsActive.innerActive)
         {
             Debug.Log("Layer 4");
-            for (int i = 0; i < arraylen; i++)
+            foreach(var activeObjects in innerObjectList)
             {
-                //If one exsists in the array, flag active as true
-                if (orbitObjectsArray.tdArrayValue[i, 0].gameObject.transform.localScale == new Vector3(1.1f, 1.1f, 1.1f))
+                if (activeObjects.gameObject.transform.localScale == new Vector3(1.1f, 1.1f, 1.1f))
                 {
                     checkActives = true;
                 }
                 else
                 {
-                    Debug.Log("At least one in layer 4 has been deactivated");
-                    //Reactivate layer 1
-                    activeOrbit.currentActiveOrbit = OrbitsActive.midActive;
+                    //Remove recently de-activated object from the list
+                    innerObjectList.Remove(activeObjects);
 
-                    //Set previous layer back to true
-                    for (int j = 0; j < arraylen; j++)
+                    if (innerObjectList.Count == 0)
                     {
-                        orbitObjectsArray.tdArrayValue[j, 1].gameObject.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
+                        Debug.Log("Winner!");
                     }
+                    else
+                    {
+                        Debug.Log("At least one in layer 4 has been deactivated");
 
+                        activeOrbit.currentActiveOrbit = OrbitsActive.midActive;
+
+                        midObjectList = new List<GameObject>(orbitObjectsMid.arrayValue);
+
+                        
+                        foreach (var previousObjects in midObjectList)
+                        {
+                            previousObjects.gameObject.transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+                        }
+                    }
                 }
             }
 

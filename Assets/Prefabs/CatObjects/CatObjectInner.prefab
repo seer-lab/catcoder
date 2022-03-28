@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2688432415333748944, guid: a5872a623998396498da5fb87a39eb4c, type: 3}
       propertyPath: m_TagString
-      value: Catnip
+      value: Catnip4
       objectReference: {fileID: 0}
     - target: {fileID: 2688432415333748946, guid: a5872a623998396498da5fb87a39eb4c, type: 3}
       propertyPath: m_IsTrigger
@@ -53,6 +53,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2688432415333748948, guid: a5872a623998396498da5fb87a39eb4c, type: 3}
       propertyPath: m_LocalScale.y
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2688432415333748948, guid: a5872a623998396498da5fb87a39eb4c, type: 3}
+      propertyPath: m_LocalScale.z
       value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 2688432415333748948, guid: a5872a623998396498da5fb87a39eb4c, type: 3}

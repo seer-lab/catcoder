@@ -20,6 +20,10 @@ PrefabInstance:
       value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 3059780365809246873, guid: ed497629d761ef343bd693967e72332c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059780365809246873, guid: ed497629d761ef343bd693967e72332c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -65,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3059780365809246877, guid: ed497629d761ef343bd693967e72332c, type: 3}
       propertyPath: m_TagString
-      value: Catnip
+      value: Catnip3
       objectReference: {fileID: 0}
     - target: {fileID: 3059780365809246878, guid: ed497629d761ef343bd693967e72332c, type: 3}
       propertyPath: m_Sprite

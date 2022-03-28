@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3460366102719688582}
   m_Layer: 0
   m_Name: OrbitMid
-  m_TagString: Untagged
+  m_TagString: Orbit3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,6 +103,7 @@ MonoBehaviour:
   catnipObjects: {fileID: 0}
   centrePoint: {x: 0, y: 0}
   activeOrbit: {fileID: 11400000, guid: f0a75f15f45ec1246980449e84d22ab9, type: 2}
+  numberThrown: {fileID: 11400000, guid: d15b2a488ee59654cad3e044f98db8b8, type: 2}
 --- !u!50 &4566912761120628878
 Rigidbody2D:
   serializedVersion: 4

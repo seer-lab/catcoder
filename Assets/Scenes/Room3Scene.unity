@@ -1588,7 +1588,10 @@ MonoBehaviour:
   - {fileID: 6219328834658973144, guid: 92d1f5fc4be3b5e4f949059511f8afab, type: 3}
   - {fileID: 5452467288461791907, guid: 1732441283e52d64eb5f7773277a618f, type: 3}
   player: {fileID: 1003456598}
-  orbitObjectsArray: {fileID: 11400000, guid: 5a5dc6890b1885545a65b540c85ff787, type: 2}
+  orbitObjectsInner: {fileID: 11400000, guid: 13c2a0ad3233ef343a580baa171c8f68, type: 2}
+  orbitObjectsMid: {fileID: 11400000, guid: 419d4f642d14ff0458d2541925fa1ccd, type: 2}
+  orbitObjectsOuter: {fileID: 11400000, guid: e04d47e71b45b0c42a55e0e1912ea09c, type: 2}
+  orbitObjectsFar: {fileID: 11400000, guid: b55dfcf4349cedf47ab2518bd6d53c54, type: 2}
   activeOrbit: {fileID: 11400000, guid: f0a75f15f45ec1246980449e84d22ab9, type: 2}
 --- !u!4 &248878920
 Transform:
@@ -1611,6 +1614,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4711192848070926991, guid: 47598f8c91359a449ace3afc198b15d3, type: 3}
+      propertyPath: activeOrbit
+      value: 
+      objectReference: {fileID: 11400000, guid: f0a75f15f45ec1246980449e84d22ab9, type: 2}
     - target: {fileID: 7909830673510691666, guid: 47598f8c91359a449ace3afc198b15d3, type: 3}
       propertyPath: m_RootOrder
       value: 3

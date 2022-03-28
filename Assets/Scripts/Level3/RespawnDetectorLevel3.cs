@@ -24,9 +24,8 @@ public class RespawnDetectorLevel3 : MonoBehaviour
 
     public void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Catnip")
+        if (other.gameObject.tag == "Catnip1" || other.gameObject.tag == "Catnip2" || other.gameObject.tag == "Catnip3" || other.gameObject.tag == "Catnip4")
         {
-            Debug.Log("catnip");
             currentlyOccupied = false;
         }  
     }

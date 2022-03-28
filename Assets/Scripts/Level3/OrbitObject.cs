@@ -13,6 +13,7 @@ public class OrbitObject : MonoBehaviour
     private float angle;
 
     [SerializeField] private OrbitObjectsActiveAssetValue activeOrbit;
+    [SerializeField] private BoolAssetValue numberThrown;
 
     // Start is called before the first frame update
     void Start()
@@ -89,8 +90,29 @@ public class OrbitObject : MonoBehaviour
 
     public void MatchedObjects(GameObject collisionObject)
     {
+        //Debug.Log("is:" + numberThrown.value);
         Destroy(collisionObject);
-        gameObject.transform.localScale = new Vector3(0, 0, 0);
+        if (numberThrown.value == true)
+        {
+            gameObject.transform.localScale = new Vector3(0, 0, 0);
+            var sameTagObjects = GameObject.FindGameObjectsWithTag(gameObject.transform.tag);
+            var randomNum = Random.Range(2, 3);
+            Debug.Log("rand:" + randomNum);
+            Debug.Log("same:" + sameTagObjects.Length);
+            foreach (var taggedObjects in sameTagObjects)
+            {
+                if (taggedObjects.transform.localScale != new Vector3(0, 0 , 0) && randomNum != 0)
+                {
+                    taggedObjects.transform.localScale = new Vector3(0, 0, 0);
+                    randomNum--;
+                }
+            }
+        }
+        else
+        {
+            gameObject.transform.localScale = new Vector3(0, 0, 0);
+        }
+        
 
     }
 }
