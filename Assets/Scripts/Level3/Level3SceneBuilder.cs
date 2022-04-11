@@ -38,8 +38,12 @@ public class Level3SceneBuilder : MonoBehaviour
 
     private bool wasRemoved = false;
 
+    [SerializeField] private CurrentLevelValue currentLevel;
+
     private void Start()
     {
+        currentLevel.currentLevel = LevelValues.level1_3;
+
         currentlySpawning = Spawning.positive;
 
         spawningCounter = 0;

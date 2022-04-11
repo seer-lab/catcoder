@@ -407,7 +407,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: RespawnDetectorSpot3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2109307540861326907, guid: fa7f743e0a18dd944adb0a1b554fc579, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fa7f743e0a18dd944adb0a1b554fc579, type: 3}
 --- !u!1001 &303953212
 PrefabInstance:
@@ -639,7 +640,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: RespawnDetectorSpot1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2109307540861326907, guid: fa7f743e0a18dd944adb0a1b554fc579, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fa7f743e0a18dd944adb0a1b554fc579, type: 3}
 --- !u!114 &624849910 stripped
 MonoBehaviour:
@@ -662,6 +664,23 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8161143754198844182, guid: fa7f743e0a18dd944adb0a1b554fc579, type: 3}
   m_PrefabInstance: {fileID: 532080012}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &741255571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741255570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8695f5e31ff680140a86014a781924c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnSpot: {fileID: 0}
+  prefabList: []
+  stageValues: []
+  stageCompleted: []
+  spawnSpecial: []
 --- !u!1001 &804203833
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1069,6 +1088,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb0e45fa3ac1f6643af0690a2ea511b6, type: 3}
+--- !u!1 &1133647454
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1133647456}
+  - component: {fileID: 1133647455}
+  m_Layer: 0
+  m_Name: SceneBuilder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1133647455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133647454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0208136f66f9ca478a1f778d3563317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLevel: {fileID: 11400000, guid: f53990203f676e140a7742a9287976ae, type: 2}
+--- !u!4 &1133647456
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133647454}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.4872575, y: 3.1755793, z: -8.611516}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 28
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1174998748 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4727148081732729969, guid: 475e04ddecfca1148abf1692c27f0106, type: 3}
@@ -2610,7 +2673,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: RespawnDetectorSpot2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2109307540861326907, guid: fa7f743e0a18dd944adb0a1b554fc579, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fa7f743e0a18dd944adb0a1b554fc579, type: 3}
 --- !u!1 &1627974324 stripped
 GameObject:

@@ -16,6 +16,8 @@ public class PickUp : MonoBehaviour
     [SerializeField] private OrbitObjectsActiveAssetValue activeOrbit;
     [SerializeField] private BoolAssetValue numberThrown;
 
+    [SerializeField] private CurrentLevelValue currentLevel;
+
     private void Start()
     {
         allCollisions = pickUpMask | wallCollisionMask | objectCollisionMask;
@@ -38,105 +40,145 @@ public class PickUp : MonoBehaviour
         //When the key E is pressed
         if (Input.GetKeyDown(KeyCode.E))
         {
-            //If there is currently an item being held; drop procedure
-            if (itemHolding && !(activeOrbit.currentActiveOrbit == OrbitsActive.farActive ||
+            if (currentLevel.currentLevel == LevelValues.level1_3)
+            {
+
+                //If there is currently an item being held; drop procedure
+                if (itemHolding && !(activeOrbit.currentActiveOrbit == OrbitsActive.farActive ||
                                 activeOrbit.currentActiveOrbit == OrbitsActive.outerActive ||
                                 activeOrbit.currentActiveOrbit == OrbitsActive.midActive ||
                                 activeOrbit.currentActiveOrbit == OrbitsActive.innerActive))
-            {
-                Debug.Log("Not level 3 and item being held");
-                if(hit.collider == null)
                 {
-                    itemHolding.transform.position = transform.position + Direction;
-                    itemHolding.transform.parent = null;
-                    if (itemHolding.GetComponent<Rigidbody2D>())
+                    Debug.Log("Not level 3 and item being held");
+                    if (hit.collider == null)
                     {
-                        itemHolding.GetComponent<Rigidbody2D>().simulated = true;
+                        itemHolding.transform.position = transform.position + Direction;
+                        itemHolding.transform.parent = null;
+                        if (itemHolding.GetComponent<Rigidbody2D>())
+                        {
+                            itemHolding.GetComponent<Rigidbody2D>().simulated = true;
+                        }
+                        itemHolding = null;
                     }
-                    itemHolding = null;
-                }
 
+                }
+                //Else pickup procedure
+                else
+                {
+                    Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + Direction, .4f, pickUpMask);
+                    if (pickUpItem)
+                    {
+                        if (activeOrbit.currentActiveOrbit == OrbitsActive.farActive)
+                        {
+                            if (pickUpItem.tag == "Catnip1")
+                            {
+                                itemHolding = pickUpItem.gameObject;
+                                itemHolding.transform.position = holdSpot.position;
+                                itemHolding.transform.parent = transform;
+
+                                if (itemHolding.GetComponent<Rigidbody2D>())
+                                {
+                                    itemHolding.GetComponent<Rigidbody2D>().simulated = false;
+                                }
+                                itemHoldingMulti.Add(itemHolding);
+                            }
+                            else
+                            {
+                                Debug.Log("Can only pick up Cat Head now");
+                            }
+                        }
+                        else if (activeOrbit.currentActiveOrbit == OrbitsActive.outerActive)
+                        {
+                            if (pickUpItem.tag == "Catnip2")
+                            {
+                                itemHolding = pickUpItem.gameObject;
+                                itemHolding.transform.position = holdSpot.position;
+                                itemHolding.transform.parent = transform;
+                                if (itemHolding.GetComponent<Rigidbody2D>())
+                                {
+                                    itemHolding.GetComponent<Rigidbody2D>().simulated = false;
+                                }
+                                itemHoldingMulti.Add(itemHolding);
+                            }
+                            else
+                            {
+                                Debug.Log("Can only pick up Cat Paw now");
+                            }
+                        }
+                        else if (activeOrbit.currentActiveOrbit == OrbitsActive.midActive)
+                        {
+                            if (pickUpItem.tag == "Catnip3")
+                            {
+                                itemHolding = pickUpItem.gameObject;
+                                itemHolding.transform.position = holdSpot.position;
+                                itemHolding.transform.parent = transform;
+                                if (itemHolding.GetComponent<Rigidbody2D>())
+                                {
+                                    itemHolding.GetComponent<Rigidbody2D>().simulated = false;
+                                }
+                                itemHoldingMulti.Add(itemHolding);
+                            }
+                            else
+                            {
+                                Debug.Log("Can only pick up Cat body now");
+                            }
+                        }
+                        else if (activeOrbit.currentActiveOrbit == OrbitsActive.innerActive)
+                        {
+                            if (pickUpItem.tag == "Catnip4")
+                            {
+                                itemHolding = pickUpItem.gameObject;
+                                itemHolding.transform.position = holdSpot.position;
+                                itemHolding.transform.parent = transform;
+                                if (itemHolding.GetComponent<Rigidbody2D>())
+                                {
+                                    itemHolding.GetComponent<Rigidbody2D>().simulated = false;
+                                }
+                                itemHoldingMulti.Add(itemHolding);
+                            }
+                            else
+                            {
+                                Debug.Log("Can only pick up Cat Eye now");
+                            }
+                        }
+                        else
+                        {
+                            itemHolding = pickUpItem.gameObject;
+                            itemHolding.transform.position = holdSpot.position;
+                            itemHolding.transform.parent = transform;
+                            if (itemHolding.CompareTag("CatPostMoving"))
+                            {
+                                itemHolding.tag = "CatPostHeld";
+                            }
+                            if (itemHolding.GetComponent<Rigidbody2D>())
+                            {
+                                itemHolding.GetComponent<Rigidbody2D>().simulated = false;
+                            }
+                        }
+                    }
+                }
             }
-            //Else pickup procedure
             else
             {
-                Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + Direction, .4f, pickUpMask);
-                if (pickUpItem)
+                if (itemHolding)
                 {
-                    if (activeOrbit.currentActiveOrbit == OrbitsActive.farActive)
+                    Debug.Log("Not level 3 and item being held");
+                    if (hit.collider == null)
                     {
-                        if (pickUpItem.tag == "Catnip1")
+                        itemHolding.transform.position = transform.position + Direction;
+                        itemHolding.transform.parent = null;
+                        if (itemHolding.GetComponent<Rigidbody2D>())
                         {
-                            itemHolding = pickUpItem.gameObject;
-                            itemHolding.transform.position = holdSpot.position;
-                            itemHolding.transform.parent = transform;
+                            itemHolding.GetComponent<Rigidbody2D>().simulated = true;
+                        }
+                        itemHolding = null;
+                    }
 
-                            if (itemHolding.GetComponent<Rigidbody2D>())
-                            {
-                                itemHolding.GetComponent<Rigidbody2D>().simulated = false;
-                            }
-                            itemHoldingMulti.Add(itemHolding);
-                        }
-                        else
-                        {
-                            Debug.Log("Can only pick up Cat Head now");
-                        }
-                    }
-                    else if (activeOrbit.currentActiveOrbit == OrbitsActive.outerActive)
-                    {
-                        if (pickUpItem.tag == "Catnip2")
-                        {
-                            itemHolding = pickUpItem.gameObject;
-                            itemHolding.transform.position = holdSpot.position;
-                            itemHolding.transform.parent = transform;
-                            if (itemHolding.GetComponent<Rigidbody2D>())
-                            {
-                                itemHolding.GetComponent<Rigidbody2D>().simulated = false;
-                            }
-                            itemHoldingMulti.Add(itemHolding);
-                        }
-                        else
-                        {
-                            Debug.Log("Can only pick up Cat Paw now");
-                        }
-                    }
-                    else if (activeOrbit.currentActiveOrbit == OrbitsActive.midActive)
-                    {
-                        if (pickUpItem.tag == "Catnip3")
-                        {
-                            itemHolding = pickUpItem.gameObject;
-                            itemHolding.transform.position = holdSpot.position;
-                            itemHolding.transform.parent = transform;
-                            if (itemHolding.GetComponent<Rigidbody2D>())
-                            {
-                                itemHolding.GetComponent<Rigidbody2D>().simulated = false;
-                            }
-                            itemHoldingMulti.Add(itemHolding);
-                        }
-                        else
-                        {
-                            Debug.Log("Can only pick up Cat body now");
-                        }
-                    }
-                    else if (activeOrbit.currentActiveOrbit == OrbitsActive.innerActive)
-                    {
-                        if (pickUpItem.tag == "Catnip4")
-                        {
-                            itemHolding = pickUpItem.gameObject;
-                            itemHolding.transform.position = holdSpot.position;
-                            itemHolding.transform.parent = transform;
-                            if (itemHolding.GetComponent<Rigidbody2D>())
-                            {
-                                itemHolding.GetComponent<Rigidbody2D>().simulated = false;
-                            }
-                            itemHoldingMulti.Add(itemHolding);
-                        }
-                        else
-                        {
-                            Debug.Log("Can only pick up Cat Eye now");
-                        }
-                    }
-                    else
+                }
+                else
+                {
+                    Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + Direction, .4f, pickUpMask);
+                    if (pickUpItem)
                     {
                         itemHolding = pickUpItem.gameObject;
                         itemHolding.transform.position = holdSpot.position;
@@ -152,6 +194,7 @@ public class PickUp : MonoBehaviour
                     }
                 }
             }
+            
         }
         else if (Input.GetKeyDown(KeyCode.R))
         {

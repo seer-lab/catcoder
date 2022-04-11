@@ -5,7 +5,6 @@ using TMPro;
 
 public class RespawnDetector : MonoBehaviour
 {
-    public GameObject bucketPrefab;
     public Transform respawnSpot;
     private bool currentlyOccupied;
 
@@ -36,7 +35,7 @@ public class RespawnDetector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log(stageValues[1].value);
         if (stageValues[1].value == true && stageCompleted[0].value == true)
         {
             if (spawnSpecial[0].value == true)

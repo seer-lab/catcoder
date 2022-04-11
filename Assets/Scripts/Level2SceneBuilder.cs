@@ -17,9 +17,12 @@ public class Level2SceneBuilder : MonoBehaviour
 
     [SerializeField] private GameObject[] progressPanels;
 
+    [SerializeField] private CurrentLevelValue currentLevel;
     // Start is called before the first frame update
     void Start()
     {
+        currentLevel.currentLevel = LevelValues.level1_2;
+
         stageCompletion2a.value = false;
         stageCompletion2b.value = false;
         stageCompletion3a.value = false;

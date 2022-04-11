@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Catnip1
       objectReference: {fileID: 0}
+    - target: {fileID: 7804802745295940417, guid: 4ea2c915839c7a148b0925a4860a09d5, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7804802745295940418, guid: 4ea2c915839c7a148b0925a4860a09d5, type: 3}
       propertyPath: m_IsTrigger
       value: 0

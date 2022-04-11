@@ -220,3 +220,6 @@ MonoBehaviour:
   objectCollisionMask:
     serializedVersion: 2
     m_Bits: 128
+  activeOrbit: {fileID: 0}
+  numberThrown: {fileID: 0}
+  currentLevel: {fileID: 11400000, guid: f53990203f676e140a7742a9287976ae, type: 2}
