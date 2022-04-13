@@ -4718,6 +4718,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 829901179}
     - target: {fileID: 2677570578606490796, guid: 11922c0f1e7752744ba584f6321b9a92, type: 3}
+      propertyPath: isCompleted
+      value: 
+      objectReference: {fileID: 11400000, guid: 713f3d456e3f5bc4eade5df61db337ce, type: 2}
+    - target: {fileID: 2677570578606490796, guid: 11922c0f1e7752744ba584f6321b9a92, type: 3}
       propertyPath: progressPanel
       value: 
       objectReference: {fileID: 1174998748}

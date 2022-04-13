@@ -16,6 +16,8 @@ public class DialogueNPC2 : Interactable
     [SerializeField] Vector3Int cell;
     [SerializeField] DialogueStateAssetValue thisStage;
 
+    [SerializeField] private CompletionCheck isCompleted;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,6 +78,7 @@ public class DialogueNPC2 : Interactable
                         if (tilemap.HasTile(cell) == true)
                         {
                             tilemap.SetTile(cell, null);
+                            isCompleted.level2Completion = true;
                         }
                     }
                     

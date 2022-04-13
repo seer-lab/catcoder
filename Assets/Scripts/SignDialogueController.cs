@@ -39,6 +39,8 @@ public class SignDialogueController : MonoBehaviour
     [SerializeField] Tilemap tilemap;
     [SerializeField] Vector3Int cell;
 
+    [SerializeField] private CompletionCheck isCompleted;
+
     public int clickedIndex;
     // Start is called before the first frame update
     void Start()
@@ -85,6 +87,9 @@ public class SignDialogueController : MonoBehaviour
         if (tilemap.HasTile(cell) == true && stageCompleted[7].value == true)
         {
             tilemap.SetTile(cell, null);
+
+            //Set level competion to true
+            isCompleted.level1Completion = true;
         }
     }
 

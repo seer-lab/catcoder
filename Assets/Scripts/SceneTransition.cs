@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class SceneTransition : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class SceneTransition : MonoBehaviour
     public string placeName;
     public GameObject text;
     public Text placeText;
+
+    [SerializeField] private CompletionCheck isCompleted;
+    [SerializeField] private GameObject popupPanel;
 
     public void Awake()
     {
@@ -39,12 +43,31 @@ public class SceneTransition : MonoBehaviour
     {
         if(other.CompareTag("Player") && !other.isTrigger)
         {
-            playerStorage.initialValue = playerPosition;
-            //SceneManager.LoadScene(sceneToLoad);
-            StartCoroutine(FadeCo());
-            Debug.Log("triggered scene");
+            if (sceneToLoad != "Room3Scene")
+            {
+                playerStorage.initialValue = playerPosition;
+                //SceneManager.LoadScene(sceneToLoad);
+                StartCoroutine(FadeCo());
+                Debug.Log("triggered scene");
+            }
 
-            
+            if (sceneToLoad == "Room3Scene" && isCompleted.level1Completion == true && isCompleted.level2Completion == true)
+            {
+                playerStorage.initialValue = playerPosition;
+                //SceneManager.LoadScene(sceneToLoad);
+                StartCoroutine(FadeCo());
+                Debug.Log("triggered scene");
+            }
+            else
+            {
+                Debug.Log("Incomplete!");
+
+                popupPanel.GetComponentInChildren<TextMeshProUGUI>().text = "Required levels not completed";
+
+                PopupPanelController.OpenPopup(popupPanel);
+                popupPanel.SetActive(true);
+                StartCoroutine(PopupPanelController.PopupAndDelay(5, popupPanel));
+            }
         }
     }
 

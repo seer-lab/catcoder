@@ -287,6 +287,7 @@ MonoBehaviour:
   tilemap: {fileID: 459324347}
   cell: {x: -9, y: -1, z: 0}
   thisStage: {fileID: 11400000, guid: 28a4219641836da409dfe4852c75832b, type: 2}
+  isCompleted: {fileID: 11400000, guid: 713f3d456e3f5bc4eade5df61db337ce, type: 2}
 --- !u!1001 &30714960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2414,8 +2415,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 141, y: 56.659973}
-  m_SizeDelta: {x: 244, y: 33}
+  m_AnchoredPosition: {x: 225, y: 75}
+  m_SizeDelta: {x: 364, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &291600645
 MonoBehaviour:
@@ -3884,7 +3885,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 211, y: -84}
+  m_AnchoredPosition: {x: 225, y: -150}
   m_SizeDelta: {x: 364, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &581379379
@@ -4690,7 +4691,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 211, y: 393.16}
+  m_AnchoredPosition: {x: 225, y: 150}
   m_SizeDelta: {x: 364, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1063393040
@@ -4982,19 +4983,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4727148081732729968, guid: 475e04ddecfca1148abf1692c27f0106, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 244
+      value: 364
       objectReference: {fileID: 0}
     - target: {fileID: 4727148081732729968, guid: 475e04ddecfca1148abf1692c27f0106, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 33
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 4727148081732729968, guid: 475e04ddecfca1148abf1692c27f0106, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 141
+      value: 225
       objectReference: {fileID: 0}
     - target: {fileID: 4727148081732729968, guid: 475e04ddecfca1148abf1692c27f0106, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -29.5
+      value: -75
       objectReference: {fileID: 0}
     - target: {fileID: 4727148081732729969, guid: 475e04ddecfca1148abf1692c27f0106, type: 3}
       propertyPath: m_Name
@@ -6362,6 +6363,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Popup Panel
       objectReference: {fileID: 0}
+    - target: {fileID: 5162856667857702815, guid: 25b28ce17197bdb4aa413bb4f97cb541, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5162856669084597712, guid: 25b28ce17197bdb4aa413bb4f97cb541, type: 3}
       propertyPath: m_Name
       value: PopupNotificationCanvas
@@ -6757,6 +6762,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3385919849425634714, guid: 3d97cbeb9b5ff3146b0a39062b5eea9f, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3385919849425634789, guid: 3d97cbeb9b5ff3146b0a39062b5eea9f, type: 3}
       propertyPath: m_Name
       value: Info Canvas
@@ -6771,7 +6780,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4210290051287016434, guid: 3d97cbeb9b5ff3146b0a39062b5eea9f, type: 3}
       propertyPath: m_text
-      value: boo!
+      value: Currently Inoperable!
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3385919848415050765, guid: 3d97cbeb9b5ff3146b0a39062b5eea9f, type: 3}

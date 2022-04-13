@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PickUp : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class PickUp : MonoBehaviour
     [SerializeField] private BoolAssetValue numberThrown;
 
     [SerializeField] private CurrentLevelValue currentLevel;
+    [SerializeField] private GameObject popupPanel;
 
     private void Start()
     {
@@ -85,6 +87,11 @@ public class PickUp : MonoBehaviour
                             else
                             {
                                 Debug.Log("Can only pick up Cat Head now");
+                                popupPanel.GetComponentInChildren<TextMeshProUGUI>().text = "Can only pick up Cat Head now";
+
+                                PopupPanelController.OpenPopup(popupPanel);
+                                popupPanel.SetActive(true);
+                                StartCoroutine(PopupPanelController.PopupAndDelay(5, popupPanel));
                             }
                         }
                         else if (activeOrbit.currentActiveOrbit == OrbitsActive.outerActive)
@@ -103,6 +110,11 @@ public class PickUp : MonoBehaviour
                             else
                             {
                                 Debug.Log("Can only pick up Cat Paw now");
+                                popupPanel.GetComponentInChildren<TextMeshProUGUI>().text = "Can only pick up Cat Paw now";
+
+                                PopupPanelController.OpenPopup(popupPanel);
+                                popupPanel.SetActive(true);
+                                StartCoroutine(PopupPanelController.PopupAndDelay(5, popupPanel));
                             }
                         }
                         else if (activeOrbit.currentActiveOrbit == OrbitsActive.midActive)
@@ -121,6 +133,11 @@ public class PickUp : MonoBehaviour
                             else
                             {
                                 Debug.Log("Can only pick up Cat body now");
+                                popupPanel.GetComponentInChildren<TextMeshProUGUI>().text = "Can only pick up Cat Body now";
+
+                                PopupPanelController.OpenPopup(popupPanel);
+                                popupPanel.SetActive(true);
+                                StartCoroutine(PopupPanelController.PopupAndDelay(5, popupPanel));
                             }
                         }
                         else if (activeOrbit.currentActiveOrbit == OrbitsActive.innerActive)

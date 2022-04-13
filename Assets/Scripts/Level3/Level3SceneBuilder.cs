@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public enum Spawning
 {
@@ -40,6 +41,12 @@ public class Level3SceneBuilder : MonoBehaviour
 
     [SerializeField] private CurrentLevelValue currentLevel;
 
+    [SerializeField] private GameObject circleBarrier;
+
+    [SerializeField] private TileBase tile;
+    [SerializeField] private Tilemap tilemap;
+    [SerializeField] private Vector3Int cell;
+
     private void Start()
     {
         currentLevel.currentLevel = LevelValues.level1_3;
@@ -64,6 +71,8 @@ public class Level3SceneBuilder : MonoBehaviour
         outerObjectList = new List<GameObject>();
         midObjectList = new List<GameObject>();
         innerObjectList = new List<GameObject>();
+
+        tilemap.SetTile(cell, tile);
     }
     private void Update()
     {
@@ -285,6 +294,7 @@ public class Level3SceneBuilder : MonoBehaviour
             if (!checkActives)
             {
                 Debug.Log("Win condition");
+                circleBarrier.SetActive(false);
             }
         }
     }
