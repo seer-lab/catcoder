@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Alphabetical">
+  <Class Name="BasicInkExample" Collapsed="true">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAACACAAAAACASAAAAAgIAEABBAAAgAEA=</HashCode>
+      <FileName>Assets\Ink\Demos\Basic Demo\Scripts\BasicInkExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuitGameOnKeypress" Collapsed="true">
+    <Position X="17.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Ink\Demos\Basic Demo\Scripts\QuitGameOnKeypress.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BoolAssetValue" Collapsed="true">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\BoolAssetValue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ButtonObject" Collapsed="true">
+    <Position X="17.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgAAACCAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Assets\Scripts\ButtonObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CameraMovement" Collapsed="true">
+    <Position X="19" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAiAAAAgAIAAACAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CameraMovement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CurrentLevelValue" Collapsed="true">
+    <Position X="22.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CurrentLevelValue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DeleteDetector" Collapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAEEAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Assets\Scripts\DeleteDetector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DialogueNPC" Collapsed="true">
+    <Position X="3.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQRBAAAAQCAAQEAAABAAAAAAiwAAIAAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\DialogueNPC.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DialogueObject" Collapsed="true">
+    <Position X="13.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgAAACCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\DialogueObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DialogueSign" Collapsed="true">
+    <Position X="6.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAEACAAAAAAAAAAAAIACgAAAAAAAAABAARAAAA=</HashCode>
+      <FileName>Assets\Scripts\DialogueSign.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DialogueStateAssetValue" Collapsed="true">
+    <Position X="15.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Assets\Scripts\DialogueStateAssetValue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EndgameUiManager" Collapsed="true">
+    <Position X="17.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAEAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\EndgameUiManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InfoPanelController" Collapsed="true">
+    <Position X="19" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQBEAAAACAAQEAAAAAIAGQAggAADAAEAAAQAAAAgAA=</HashCode>
+      <FileName>Assets\Scripts\InfoPanelController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Interactable" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAACAAAAAgAABAAAAAAEAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Interactable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ItemDetector" Collapsed="true">
+    <Position X="20.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAqAACAQAAAAIAAAAIAAAEAAACAAAAAECAAAABA=</HashCode>
+      <FileName>Assets\Scripts\ItemDetector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ItemDetectorValue" Collapsed="true">
+    <Position X="22.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ItemDetectorValue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Level0SceneBuilder" Collapsed="true">
+    <Position X="12" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQAAAQAACAAAAAAgAABAYACGQEAAAgABABAAAAAIAA=</HashCode>
+      <FileName>Assets\Scripts\Level0SceneBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Level1SceneBuilder" Collapsed="true">
+    <Position X="13.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Level1SceneBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Level2SceneBuilder" Collapsed="true">
+    <Position X="15.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAYAAIACgAAAAACAAAAAwAAgAAAAAABAAAAgAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Level2SceneBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Level3SceneBuilder" Collapsed="true">
+    <Position X="17.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBAACAACgAAEAAAAAEAIAUgQAAIAAhBAAAAiQgBQA=</HashCode>
+      <FileName>Assets\Scripts\Level3\Level3SceneBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OrbitObject" Collapsed="true">
+    <Position X="17.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAACCAAAAAAwAAAAIAACAAAAAAAEABgAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Level3\OrbitObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PassThroughCollider" Collapsed="true">
+    <Position X="20.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAIAAAA=</HashCode>
+      <FileName>Assets\Scripts\Level3\PassThroughCollider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RespawnDetectorLevel3" Collapsed="true">
+    <Position X="20.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAACAAAAAAAAEAAAAABAAAAAAAAAAACAAQAAA=</HashCode>
+      <FileName>Assets\Scripts\Level3\RespawnDetectorLevel3.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Notification" Collapsed="true">
+    <Position X="19" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgIAAAAAAAAAAAIAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Notification.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NotificationListener" Collapsed="true">
+    <Position X="20.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAABAAIAAAAAAAAAIAAAAAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\NotificationListener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NpcDialogueController" Collapsed="true">
+    <Position X="22.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAgAgAiAAQAABEJAAAEAAAgAAIAAEECAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\NpcDialogueController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NpcDialogueController2" Collapsed="true">
+    <Position X="12" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAgAgAiAAQAABEIAAAEAAAAAAAAAEECAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\NpcDialogueController2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NPCMovement" Collapsed="true">
+    <Position X="13.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BgQAAEAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\NPCMovement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObjectValue" Collapsed="true">
+    <Position X="15.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ObjectValue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PickUp" Collapsed="true">
+    <Position X="22.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQAAAAAASAAAAAAACAAAKAAAgIAACEAFAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\PickUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerMovement" Collapsed="true">
+    <Position X="12" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JgQAAUAAACAAAAAAAAAAAAAAAAAAAQAACAAAAAACAAA=</HashCode>
+      <FileName>Assets\Scripts\PlayerMovement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PopupPanelController" Collapsed="true">
+    <Position X="13.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Assets\Scripts\PopupPanelController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProgressBar" Collapsed="true">
+    <Position X="15.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ProgressBar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RespawnDetector" Collapsed="true">
+    <Position X="19" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAQAAACAACAAEAAgABEAAAAABgAAIAAAABAACAgAIBA=</HashCode>
+      <FileName>Assets\Scripts\RespawnDetector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneTransition" Collapsed="true">
+    <Position X="22.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAICAAABABAAAAAAACAAAAAEkAAAAAIAAIAAABigFA=</HashCode>
+      <FileName>Assets\Scripts\SceneTransition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CompletionCheck" Collapsed="true">
+    <Position X="20.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Assets\Scripts\ScriptableObjectScripts\CompletionCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ArrayAssetValue" Collapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ScriptableObjectScripts\Level3\ArrayAssetValue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OrbitObjectsActiveAssetValue" Collapsed="true">
+    <Position X="19" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ScriptableObjectScripts\Level3\OrbitObjectsActiveAssetValue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TdArrayAssetValue" Collapsed="true">
+    <Position X="15.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ScriptableObjectScripts\Level3\TdArrayAssetValue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SignDialogueController" Collapsed="true">
+    <Position X="12" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ANQBEEAAAiAAAEABEJAIAEAAsgAAIIAAsDAAAABAhCA=</HashCode>
+      <FileName>Assets\Scripts\SignDialogueController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StageClassAssetValue" Collapsed="true">
+    <Position X="13.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Assets\Scripts\StageClassAssetValue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextAssetValue" Collapsed="true">
+    <Position X="17.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\TextAssetValue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ValidationDetector" Collapsed="true">
+    <Position X="19" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAwAgACAIAAAAAAgAAAAAIkACACAAAAAFAECgBEA=</HashCode>
+      <FileName>Assets\Scripts\ValidationDetector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VectorValue" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAIAAAAAAAAAAAAAABAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\VectorValue.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WaypointMovement" Collapsed="true">
+    <Position X="22.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EQQEAAAAACAAAAAAAAAAAAAABAIAAQAAAAAAAAAAgAA=</HashCode>
+      <FileName>Assets\Scripts\WaypointMovement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="LevelValues" Collapsed="true">
+    <Position X="12" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAACAAAAAAABAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CurrentLevelValue.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="StageValues" Collapsed="true">
+    <Position X="17.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\DialogueStateAssetValue.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Spawning" Collapsed="true">
+    <Position X="15.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Level3\Level3SceneBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="OrbitsActive" Collapsed="true">
+    <Position X="13.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ScriptableObjectScripts\Level3\OrbitObjectsActiveAssetValue.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

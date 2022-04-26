@@ -413,7 +413,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Cat Coders
+  m_text: 'Welcome to Catcoders!
+
+    This is a game targetted at you, the beginner!
+
+    Here
+    you will learn about various beginning concepts of computer programming - and
+    will hopefully have fun in the process!
+
+    Press start and I hope you enjoy
+    the game!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 19018153fffea0f46af9c15263955d33, type: 2}
   m_sharedMaterial: {fileID: -2040070973991949232, guid: 19018153fffea0f46af9c15263955d33, type: 2}
@@ -423,7 +432,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.4811321, g: 0.43347278, b: 0.43347278, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -440,8 +449,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1671,7 +1680,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Cat Coders
+  m_text: 'You! For playing this game.
+
+
+    My supervisors, Jeremy Bradbury and
+    Randy Fortier, for supporting me through this process
+
+
+    Ontario Tech University
+    for offering various undergraduate thesis programs.
+
+
+    Myself, for getting
+    the opportunity to develop this game!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 19018153fffea0f46af9c15263955d33, type: 2}
   m_sharedMaterial: {fileID: -2040070973991949232, guid: 19018153fffea0f46af9c15263955d33, type: 2}
@@ -1681,7 +1702,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.48235294, g: 0.43529412, b: 0.43529412, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1698,14 +1719,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2068,7 +2089,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Cat Coders
+  m_text: 'A friendly thank you to:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 19018153fffea0f46af9c15263955d33, type: 2}
   m_sharedMaterial: {fileID: -2040070973991949232, guid: 19018153fffea0f46af9c15263955d33, type: 2}
@@ -2078,7 +2099,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.48235294, g: 0.43529412, b: 0.43529412, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2095,8 +2116,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
